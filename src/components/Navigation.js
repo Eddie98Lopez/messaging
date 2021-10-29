@@ -1,5 +1,6 @@
 import React from 'react'
 import {NavLink, useHistory} from 'react-router-dom'
+import { Icon } from './styled-components/Icon'
 import styled from 'styled-components'
 import inbox from '../design-assets/inbox.png'
 import logoutIcon from '../design-assets/logout.svg'
@@ -31,16 +32,6 @@ padding:2rem;
         color:black;
         cursor:pointer;
 
-        & .icon{
-            height:inherit;
-            display:inline;
-            margin-right:1rem;
-
-            & img{
-                width:auto;
-                height:100%;
-
-            }
         }
 
     }
@@ -71,33 +62,26 @@ const Navigation = (props) => {
             <div className='navlinks'>
                 <div>
                     <NavLink className = 'link'to = {`${url}/compose`}>
-                        <div className = 'icon'>
-                            <img src={compose} alt='new-message-icon'/>
-                        </div>
+                        <Icon img={compose} alt='new-message-icon'/>
                         <span>Compose</span>
                     </NavLink>
 
                     <hr/>
 
                     <NavLink className = 'link'to = {`${url}/inbox`}>
-                        <div className = 'icon'>
-                            <img src={inbox} alt='inbox-icon'/>
-                        </div>
+                        <Icon img={inbox} alt='inbox-icon'/>
                         <span>Inbox</span>
                     </NavLink>
 
                     <NavLink className = 'link'to = {`${url}/sent`}>
-                        <div className = 'icon'>
-                            <img src={sent} alt='sent-icon'/>
-                        </div>
+                        <Icon img={sent} alt='sent-icon'/>
                         <span>Sent</span>
                     </NavLink>
                 </div>
 
+
                 <div onClick={logout} className='link'>
-                    <div className = 'icon'>
-                        <img src={logoutIcon} alt='logout-icon'/>
-                    </div>
+                    <Icon img={logoutIcon} alt='logout'/>
                     <span>Logout</span>
                 </div>
 
