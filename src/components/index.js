@@ -1,4 +1,4 @@
 import Dashboard from './Dashboard'
-import Login from './Login'
+import Login from './LoginForm'
 
 export {Login, Dashboard}
