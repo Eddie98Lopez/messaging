@@ -11,6 +11,10 @@ height: inherit;
 display: grid;
 grid-template-columns: 1fr 4fr;
 grid-template-rows: 100%;
+
+@media only screen and (max-width:600px){
+    display:block;
+}
 `
 
 const Dashboard = (props) => {

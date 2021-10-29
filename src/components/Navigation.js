@@ -1,48 +1,25 @@
-import React from 'react'
-import {NavLink, useHistory} from 'react-router-dom'
+import React, {useState,useEffect} from 'react'
+import {NavLink, useHistory, useLocation} from 'react-router-dom'
 import { Icon } from './styled-components/Icon'
-import styled from 'styled-components'
-import inbox from '../design-assets/inbox.png'
-import logoutIcon from '../design-assets/logout.svg'
-import compose from '../design-assets/compose.svg'
-import sent from '../design-assets/sent.png'
+import { NavLinks, Nav } from './styled-components/Navigation'
+import {hamburger,inbox,logoutIcon,compose,sent} from '../design-assets'
 
 
-const Nav = styled.nav`
-width: 100%;
-height: 100%;
-align-items: left;
-background: #c2c2c2;
-padding:2rem;
 
-& .navlinks{
-    height:100%;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    align-items:right;
-    
-    & .link{
-        height:35px;
-        width:100%;
-        margin: .5rem auto;
-        display:flex;
-        align-items:center;
-        text-decoration:none;
-        color:black;
-        cursor:pointer;
-
-        }
-
-    }
-
-}
-
-`
 
 const Navigation = (props) => {
     const {url} = props
     const {push} = useHistory()
+    const location = useLocation()
+
+    //the slice of state below is used for the mobile menu functionality
+    const [display,setDisplay]=useState(false)
+
+
+    //in mobile view the "useEffect" below closes the mobile menu when the route changes
+    useEffect(()=>{
+        setDisplay(false)
+    },[location])
 
     const logout = e => {
         localStorage.removeItem('token')
@@ -50,16 +27,22 @@ const Navigation = (props) => {
         push('/')   
     }
 
+
+
     return (
         <Nav>
 
-            <div>
+            <div className='logo'>
 
                 Logo
 
+                <div className='hamburger' onClick={()=> setDisplay(!display)}>
+                    <Icon img={hamburger} alt='hamburger' />
+                </div>
+
             </div>
 
-            <div className='navlinks'>
+            <NavLinks mobile={display}>
                 <div>
                     <NavLink className = 'link'to = {`${url}/compose`}>
                         <Icon img={compose} alt='new-message-icon'/>
@@ -85,7 +68,7 @@ const Navigation = (props) => {
                     <span>Logout</span>
                 </div>
 
-            </div>
+            </NavLinks>
 
 
         </Nav>

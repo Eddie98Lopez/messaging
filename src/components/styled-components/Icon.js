@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Ico = styled.div`
 
-height:inherit;
+height:${props => props.height ? props.height : 'inherit'};
 display:inline;
 margin-right:1rem;
 
@@ -14,9 +14,9 @@ margin-right:1rem;
 }`
 
 const Icon = (props) => {
-    const {img,alt}=props
+    const {img,alt,height}=props
     return(
-        <Ico>
+        <Ico height={height}>
             <img src={img} alt={alt}/>
         </Ico>
     )
