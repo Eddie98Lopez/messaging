@@ -9,7 +9,7 @@ const Wrapper = styled.div`
 width:100%;
 height: inherit;
 display: grid;
-grid-template-columns: 1fr 2fr;
+grid-template-columns: 1fr 4fr;
 grid-template-rows: 100%;
 `
 
@@ -28,7 +28,7 @@ const Dashboard = (props) => {
             <Route path = {`${path}/inbox`}>
                 <MessageFolder/>
             </Route>
-            
+
             <Route path = {`${path}/Compose`}>
                 <NewMessage/>
             </Route>
