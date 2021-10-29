@@ -15,7 +15,6 @@ const Navigation = (props) => {
     //the slice of state below is used for the mobile menu functionality
     const [display,setDisplay]=useState(false)
 
-
     //in mobile view the "useEffect" below closes the mobile menu when the route changes
     useEffect(()=>{
         setDisplay(false)
@@ -26,8 +25,6 @@ const Navigation = (props) => {
         console.log(localStorage)
         push('/')   
     }
-
-
 
     return (
         <Nav>

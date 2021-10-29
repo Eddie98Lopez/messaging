@@ -45,7 +45,7 @@ z-index:3;
 
 
 
-/*Below is "NavLinks" a seperate div of jus the links.
+/*Below is "NavLinks" a seperate div of just the links.
  Its seperated purposefully so when the screen is resized the mobile menu will toggle 
  on and off based on state */
 

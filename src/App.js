@@ -13,7 +13,9 @@ function App() {
     <AppContainer>
 
       <Switch>
-        <Route exact path="/"></Route>
+        <Route exact path="/">
+          
+        </Route>
         
         <Route path="/dash">
           <Dashboard/>
