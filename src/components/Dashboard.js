@@ -1,6 +1,7 @@
 import React from "react";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
 import { Navigation, MessageFolder, NewMessage, MessageDetails } from ".";
+import { MessagesProvider } from "../utils/MessageListContext";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -16,16 +17,6 @@ const Wrapper = styled.div`
 `;
 
 const Dashboard = (props) => {
-  const dummyData = [
-    {
-      title: "Where to go from here?",
-      body: "boop boop boop",
-      sender: "Richard",
-      id: 1,
-    },
-    { title: "boop", body: "boop boop boop", sender: "Booper", id: 2 },
-  ];
-
   const { path, url } = useRouteMatch();
 
   return (
@@ -33,18 +24,19 @@ const Dashboard = (props) => {
       <Navigation url={url} />
 
       <Switch>
-        <Route exact path={`${path}/compose`}>
-          <NewMessage />
-        </Route>
+        <MessagesProvider>
+          <Route exact path={`${path}/compose`}>
+            <NewMessage/>
+          </Route>
 
-        <Route exact path={`${path}/:folder`}>
-          <MessageFolder messages={dummyData} />
-        </Route>
+          <Route exact path={`${path}/:folder`}>
+            <MessageFolder />
+          </Route>
 
-        <Route exact path={`${path}/:folder/:id`}>
-          <MessageDetails messages={dummyData} />
-        </Route>
-
+          <Route path={`${path}/:folder/:id`}>
+            <MessageDetails />
+          </Route>
+        </MessagesProvider>
       </Switch>
     </Wrapper>
   );

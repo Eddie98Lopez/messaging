@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import messageSchema from "../utils/messageSchema";
 import * as Yup from "yup";
+import { MessagesContext } from "../utils/MessageListContext";
+
 //import axios from 'axios'
 
 const NewMessage = (props) => {
-  const initialMessage = {
+  const initialDraft = {
     title: "",
     receiver: "",
     body: "",
@@ -16,13 +18,14 @@ const NewMessage = (props) => {
     body: "",
   };
 
-  const [message, setMessage] = useState(initialMessage);
+  const [draft, setDraft] = useState(initialDraft);
   const [errors, setErrors] = useState(initialErrors);
   const [disabled,setDisabled] = useState(true)
+  const [messages,setMessages] = useContext(MessagesContext)
 
   const change = (e) => {
     const { name, value } = e.target;
-    setMessage({ ...message, [name]: value });
+    setDraft({ ...draft, [name]: value });
     Yup.reach(messageSchema, name)
       .validate(value)
       .then((res) => setErrors({ ...errors, [name]: "" }))
@@ -32,16 +35,18 @@ const NewMessage = (props) => {
 
   const submit = (e) => {
     e.preventDefault();
-    setMessage(initialMessage);
-    /*axios.post(url,message)
+    setMessages({...messages, sent: [...messages.sent, {...draft, id: Date.now()}]})
+    setDraft(initialDraft);
+
+    /*axios.post(url,draft)
         .then()
         .catch()*/
   };
 
   useEffect(()=>{
-      messageSchema.isValid(message)
+      messageSchema.isValid(draft)
         .then(res => setDisabled(!res))
-  },[message])
+  },[draft])
 
   return (
     <div>
@@ -50,7 +55,7 @@ const NewMessage = (props) => {
           <input
             name="title"
             type="text"
-            value={message.title}
+            value={draft.title}
             onChange={change}
             placeholder="Title"
           />
@@ -61,7 +66,7 @@ const NewMessage = (props) => {
           <input
             name="receiver"
             type="text"
-            value={message.receiver}
+            value={draft.receiver}
             onChange={change}
             placeholder="Recipient"
           />
@@ -72,7 +77,7 @@ const NewMessage = (props) => {
           <textarea
             type="text"
             name="body"
-            value={message.body}
+            value={draft.body}
             onChange={change}
             placeholder="type your message here..."
           />
