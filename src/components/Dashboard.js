@@ -3,6 +3,7 @@ import {Switch, Route, useRouteMatch} from 'react-router-dom'
 import MessageFolder from './MessageFolder'
 import Navigation from './Navigation'
 import NewMessage from './NewMessage'
+import MessageDetails from './MessageDetails'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
@@ -17,7 +18,20 @@ grid-template-rows: 100%;
 }
 `
 
+
+
 const Dashboard = (props) => {
+
+    const dummyData = [{
+        title:"Where to go from here?",
+        body:'boop boop boop',
+        sender: "Richard",
+        id:1
+    }, 
+        {title:"boop",
+        body:'boop boop boop',
+        sender: "Booper",
+        id:2 }]
 
     const {path, url} = useRouteMatch()
 
@@ -29,17 +43,18 @@ const Dashboard = (props) => {
         <Navigation url ={url}/>
 
         <Switch>
-            <Route path = {`${path}/inbox`}>
-                <MessageFolder/>
-            </Route>
-
-            <Route path = {`${path}/Compose`}>
+            <Route exact path = {`${path}/compose`}>
                 <NewMessage/>
             </Route>
 
-            <Route path = {`${path}/sent`}>
-                <MessageFolder/>
+            <Route exact path = {`${path}/:folder`}>
+                <MessageFolder messages={dummyData}/>
             </Route>
+
+            <Route exact path = {`${path}/:folder/:id`}>
+                <MessageDetails messages={dummyData}/>
+            </Route>
+
         </Switch>
 
     </Wrapper>
