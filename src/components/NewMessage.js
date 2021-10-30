@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import * as Yup from "yup";
 
 const NewMessage = (props) => {
   const initialMessage = {
@@ -7,7 +8,13 @@ const NewMessage = (props) => {
     body: "",
   };
 
+  const initialErrors = {
+    title: "",
+    receiver: "",
+    body: "",
+  };
   const [message, setMessage] = useState(initialMessage);
+  const [errors, setErrors] = useState(initialErrors);
 
   const change = (e) => {
     const { name, value } = e.target;
@@ -17,35 +24,44 @@ const NewMessage = (props) => {
 
   const submit = (e) => {
     e.preventDefault();
-    setMessage(initialMessage)
+    setMessage(initialMessage);
   };
 
   return (
     <div>
       <form onSubmit={submit}>
-        <input
-          name="title"
-          type="text"
-          value={message.title}
-          onChange={change}
-          placeholder="Title"
-        />
+        <div>
+          <input
+            name="title"
+            type="text"
+            value={message.title}
+            onChange={change}
+            placeholder="Title"
+          />
+          <div>{errors.title}</div>
+        </div>
 
-        <input
-          name="receiver"
-          type="text"
-          value={message.receiver}
-          onChange={change}
-          placeholder="Recipient"
-        />
+        <div>
+          <input
+            name="receiver"
+            type="text"
+            value={message.receiver}
+            onChange={change}
+            placeholder="Recipient"
+          />
+          <div>{errors.receiver}</div>
+        </div>
 
-        <textarea
-          type="text"
-          name="body"
-          value={message.body}
-          onChange={change}
-          placeholder="type your message here..."
-        />
+        <div>
+          <textarea
+            type="text"
+            name="body"
+            value={message.body}
+            onChange={change}
+            placeholder="type your message here..."
+          />
+          <div>{errors.body}</div>
+        </div>
 
         <button>Send</button>
       </form>
