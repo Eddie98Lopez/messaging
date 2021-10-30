@@ -3,5 +3,6 @@ import inbox from '../design-assets/inbox.png'
 import logoutIcon from '../design-assets/logout.svg'
 import compose from '../design-assets/compose.svg'
 import sent from '../design-assets/sent.png'
-
-export {hamburger,inbox,logoutIcon,compose,sent}
+import deleteIcon from '../design-assets/deleteIcon.svg'
+import reply from './reply.png'
+export {hamburger,inbox,logoutIcon,compose,sent,deleteIcon,reply}
