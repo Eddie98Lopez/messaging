@@ -3,6 +3,7 @@ import { useParams, useHistory } from "react-router-dom";
 import { Icon } from "./styled-components";
 import { MessagesContext } from "../utils/MessageListContext";
 import { deleteIcon, reply } from "../design-assets";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const MessageDetails = (props) => {
   const { folder, id } = useParams();
@@ -13,7 +14,12 @@ const MessageDetails = (props) => {
   const { title, body, sender, receiver } = details;
 
   const deleteMessage = () => {
-    console.log(messages);
+
+    axiosWithAuth()
+      .delete(`https://messaging-test.bixly.com/messages/${id}`)
+      .then(res => console.log(res))
+      .catch(err=>console.log(err))
+    
     setMessage({
       ...messages,
       [folder]: messages[`${folder}`].filter((item) => item !== details),

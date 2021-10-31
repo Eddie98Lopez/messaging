@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useHistory, useParams } from "react-router";
 import { Icon, Thumb } from "./styled-components";
 import { deleteIcon, reply } from "../design-assets";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 import { MessagesContext } from "../utils/MessageListContext";
 
 const MessageThumb = (props) => {
@@ -16,6 +17,10 @@ const MessageThumb = (props) => {
   };
 
   const deleteMessage = () => {
+    axiosWithAuth()
+    .delete(`https://messaging-test.bixly.com/messages/${id}`)
+    .then(res => console.log(res))
+    .catch(err=>console.log(err))
     setMessages({
       ...messages,
       [folder]: messages[`${folder}`].filter((message) => message.id !== id),
