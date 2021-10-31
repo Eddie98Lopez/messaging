@@ -5,6 +5,7 @@ import MessageDetails from "./MessageDetails";
 import MessageFolder from "./MessageFolder";
 import MessageThumb from "./MessageThumb";
 import NewMessage from "./NewMessage";
+import { PrivateRoute } from "./PrivateRoute";
 
 export {
   Login,
@@ -14,4 +15,5 @@ export {
   MessageFolder,
   MessageThumb,
   NewMessage,
+  PrivateRoute
 };
