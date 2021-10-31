@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import messageSchema from "../utils/messageSchema";
 import * as Yup from "yup";
 import { MessagesContext } from "../utils/MessageListContext";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 //import axios from 'axios'
 
@@ -20,8 +21,8 @@ const NewMessage = (props) => {
 
   const [draft, setDraft] = useState(initialDraft);
   const [errors, setErrors] = useState(initialErrors);
-  const [disabled,setDisabled] = useState(true)
-  const [messages,setMessages] = useContext(MessagesContext)
+  const [disabled, setDisabled] = useState(true);
+  const [messages, setMessages] = useContext(MessagesContext);
 
   const change = (e) => {
     const { name, value } = e.target;
@@ -30,23 +31,24 @@ const NewMessage = (props) => {
       .validate(value)
       .then((res) => setErrors({ ...errors, [name]: "" }))
       .catch((err) => setErrors({ ...errors, [name]: err.errors[0] }));
-
   };
 
   const submit = (e) => {
     e.preventDefault();
-    setMessages({...messages, sent: [...messages.sent, {...draft, id: Date.now()}]})
+    axiosWithAuth()
+      .post("https://messaging-test.bixly.com/messages/", draft)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+    setMessages({
+      ...messages,
+      sent: [...messages.sent, { ...draft, id: Date.now() }],
+    });
     setDraft(initialDraft);
-
-    /*axios.post(url,draft)
-        .then()
-        .catch()*/
   };
 
-  useEffect(()=>{
-      messageSchema.isValid(draft)
-        .then(res => setDisabled(!res))
-  },[draft])
+  useEffect(() => {
+    messageSchema.isValid(draft).then((res) => setDisabled(!res));
+  }, [draft]);
 
   return (
     <div>

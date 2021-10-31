@@ -1,7 +1,7 @@
 import './App.css';
 import styled from 'styled-components'
-import {Switch, Route} from 'react-router-dom'
-import { Dashboard,Login } from './components';
+import {Switch, Route, Redirect} from 'react-router-dom'
+import { Dashboard,Login} from './components';
 
 const AppContainer = styled.div`
 width: 100%;
@@ -20,7 +20,7 @@ function App() {
         </Route>
         
         <Route path="/dash">
-          <Dashboard/>
+          {localStorage.getItem('token')? <Dashboard/> : <Redirect to='/login'/>}
         </Route>
       </Switch>
 
