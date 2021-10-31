@@ -40,6 +40,7 @@ const Login = (props) => {
                 console.log(res)
                 const token = res.data.token
                 localStorage.setItem('token',token)
+                console.log(localStorage)
                 push('/dash/inbox')
 
             })

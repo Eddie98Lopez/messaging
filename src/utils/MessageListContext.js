@@ -1,37 +1,39 @@
+//import axios from "axios";
+import { axiosWithAuth } from "./axiosWithAuth";
 import React, { createContext, useState, useEffect } from "react";
 
-export const MessagesContext = createContext()
+export const MessagesContext = createContext();
 
 export const MessagesProvider = (props) => {
+  const [messages, setMessages] = useState({ inbox: [], sent: [] });
 
-    const [messages,setMessages] = useState({
-        inbox:[
-            {
-              title: "Where to go from here?",
-              body: "boop boop boop",
-              sender: "Richard",
-              id: 1,
-            },
-            { title: "boop", body: "boop boop boop", sender: "Booper", id: 2 },
-          ],
-        sent:[
-            {
-              title: "I have an idea?",
-              body: "boop boop boop",
-              receiver: "Richard",
-              id: 1,
-            },
-            { title: "boop", body: "boop boop boop", receiver: "Booper", id: 2 },
-          ]
-    })
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const inbox = await axiosWithAuth().get(
+          "https://messaging-test.bixly.com/messages"
+        );
+        const sent = await axiosWithAuth().get(
+          "https://messaging-test.bixly.com/messages/sent"
+        );
+        console.log(inbox);
+        console.log(sent);
 
-    //useEffect(()=>{},[])
+        setMessages({
+          inbox: inbox.data,
+          sent: sent.data,
+        });
+      } catch {
+        console.log("something went wrong");
+      }
+    };
 
+    fetchData();
+  }, []);
 
-    return(
-        <MessagesContext.Provider value={[messages,setMessages]}>
-            {props.children}
-        </MessagesContext.Provider>
-        
-    )
-}
+  return (
+    <MessagesContext.Provider value={[messages, setMessages]}>
+      {props.children}
+    </MessagesContext.Provider>
+  );
+};

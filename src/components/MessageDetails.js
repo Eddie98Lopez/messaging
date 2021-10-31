@@ -9,8 +9,6 @@ const MessageDetails = (props) => {
 const{folder, id} = useParams()
 const {push,goBack} = useHistory()
 
-console.log(useHistory())
-
 const [messages,setMessage] = useContext(MessagesContext)
 const details = messages[`${folder}`].filter(item => item.id == id)[0]
 const {title, body, sender, receiver} = details
