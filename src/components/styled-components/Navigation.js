@@ -7,7 +7,8 @@ width: 100%;
 height: 100%;
 padding: 2rem 0;
 align-items: left;
-background: #c2c2c2;
+background: #E57E31;
+color:white;
 display:flex;
 flex-direction:column;
 justify-content:space-between;
@@ -57,24 +58,39 @@ const NavLinks = styled.div`
     display:flex;
     flex-direction:column;
     justify-content:space-between;
-    align-items:right;
+    align-items:auto;
+
+    & .top{
+        display:inherit;
+        flex-direction: inherit;
+    }
+
+    & .divider{
+        height: 1.5px;
+        width: 90%;
+        margin:auto;
+        background: white;
+        margin: 1rem;
+    }
     
 
     & .link{
         height:3rem;
         width:100%;
-        padding:.75rem 2rem;
+        padding:.75rem 3rem;
         display:flex;
         align-items:center;
         text-decoration:none;
-        color:black;
+        color:white;
+        font-family: loos-normal, sans-serif;
         cursor:pointer;
 
         
         }
     & .active{
-        font-weight: bold;
+        font-weight: 700;
         background: white;
+        color: #E57E31;
 
     }
 

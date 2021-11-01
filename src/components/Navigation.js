@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import {NavLink, useHistory, useLocation, Link} from 'react-router-dom'
-import { NavLinks, Nav, Icon } from './styled-components'
+import { NavLinks, Nav, Icon, ComposeButton } from './styled-components'
 import {hamburger,inbox,logoutIcon,compose,sent} from '../design-assets'
 
 
@@ -39,13 +39,13 @@ const Navigation = (props) => {
             </div>
 
             <NavLinks mobile={display}>
-                <div>
-                    <Link className = 'link' to = {`${url}/compose`}>
+                <div className='top'>
+                    <ComposeButton onClick={()=>push(`${url}/compose`)}>
                         <Icon img={compose} alt='new-message-icon'/>
                         <span>Compose</span>
-                    </Link>
+                    </ComposeButton>
 
-                    <hr/>
+                    <div className='divider'></div>
 
                     <NavLink activeClassName='active' className = 'link' to = {`${url}/inbox`}>
                         <Icon img={inbox} alt='inbox-icon'/>
