@@ -1,7 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import {NavLink, useHistory, useLocation} from 'react-router-dom'
-import { Icon } from './styled-components/Icon'
-import { NavLinks, Nav } from './styled-components'
+import { NavLinks, Nav, Icon } from './styled-components'
 import {hamburger,inbox,logoutIcon,compose,sent} from '../design-assets'
 
 

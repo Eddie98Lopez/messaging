@@ -1,0 +1,1 @@
+export const baseUrl = 'https://messaging-test.bixly.com/'

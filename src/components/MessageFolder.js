@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import MessageThumb from "./MessageThumb";
 import { useParams } from "react-router-dom";
-import { MessagesContext } from "../utils/MessageListContext";
+import { MessagesContext } from "../utils";
 
 const MessageFolder = (props) => {
   //const { messages } = props;

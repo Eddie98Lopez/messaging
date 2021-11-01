@@ -1,12 +1,18 @@
 import React, { useState, useEffect, useContext } from "react";
-import messageSchema from "../utils/messageSchema";
+import {
+  messageSchema,
+  axiosWithAuth,
+  MessagesContext,
+  baseUrl,
+  fetchMessages,
+} from "../utils";
 import * as Yup from "yup";
-import { MessagesContext } from "../utils/MessageListContext";
-import { axiosWithAuth } from "../utils/axiosWithAuth";
+import { useHistory } from "react-router-dom";
 
 //import axios from 'axios'
 
 const NewMessage = (props) => {
+  const { push } = useHistory();
   const initialDraft = {
     title: "",
     receiver: "",
@@ -35,15 +41,19 @@ const NewMessage = (props) => {
 
   const submit = (e) => {
     e.preventDefault();
-    axiosWithAuth()
-      .post("https://messaging-test.bixly.com/messages/", draft)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
-    setMessages({
-      ...messages,
-      sent: [...messages.sent, { ...draft, id: Date.now() }],
-    });
-    setDraft(initialDraft);
+    const fetchData = async () => {
+      try {
+        const newMessage = await axiosWithAuth().post(`${baseUrl}messages/`,draft);
+        newMessage.data.data = "success"
+          ? fetchMessages(setMessages)
+          : console.log("something went wrong");
+      } 
+      catch {
+        console.log("something went wrong");
+      }
+    };
+    fetchData();
+    push("/dash/inbox");
   };
 
   useEffect(() => {

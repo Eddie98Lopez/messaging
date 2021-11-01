@@ -2,8 +2,7 @@ import React, { useContext } from "react";
 import { useHistory, useParams } from "react-router";
 import { Icon, Thumb } from "./styled-components";
 import { deleteIcon, reply } from "../design-assets";
-import { axiosWithAuth } from "../utils/axiosWithAuth";
-import { MessagesContext } from "../utils/MessageListContext";
+import { MessagesContext, deleteMessage } from "../utils";
 
 const MessageThumb = (props) => {
   const { title, sender, id, receiver } = props.message;
@@ -16,16 +15,7 @@ const MessageThumb = (props) => {
     push(`/dash/${folder}/${id}`);
   };
 
-  const deleteMessage = () => {
-    axiosWithAuth()
-    .delete(`https://messaging-test.bixly.com/messages/${id}`)
-    .then(res => console.log(res))
-    .catch(err=>console.log(err))
-    setMessages({
-      ...messages,
-      [folder]: messages[`${folder}`].filter((message) => message.id !== id),
-    });
-  };
+
 
   return (
     <Thumb>
@@ -46,7 +36,7 @@ const MessageThumb = (props) => {
           img={deleteIcon}
           alt="delete"
           height={"1.25rem"}
-          onClick={deleteMessage}
+          onClick={()=>deleteMessage([messages,setMessages],id)}
         />
       </div>
     </Thumb>
