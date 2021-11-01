@@ -1,6 +1,6 @@
 import './App.css';
 import styled from 'styled-components'
-import {Switch, Route, Redirect} from 'react-router-dom'
+import {Switch, Route} from 'react-router-dom'
 import { Dashboard,Login, PrivateRoute} from './components';
 
 const AppContainer = styled.div`

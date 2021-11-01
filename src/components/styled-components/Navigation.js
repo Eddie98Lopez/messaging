@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
-/*Below is the parent nav element that will house navlinks. */
+/*Below is the parent nav element that will house navLinks. */
 
 const Nav = styled.nav`
 width: 100%;
 height: 100%;
+padding: 2rem 0;
 align-items: left;
 background: #c2c2c2;
-padding:2rem;
 display:flex;
 flex-direction:column;
 justify-content:space-between;
@@ -37,6 +37,7 @@ z-index:3;
 @media only screen and (max-width:600px){
     height:auto;
     position:sticky;
+    overflow:hidden;
     top:0;
     padding:0;
 }
@@ -45,7 +46,7 @@ z-index:3;
 
 
 
-/*Below is "NavLinks" a seperate div of just the links.
+/*Below is "NavLinks" a seperzate div of just the links.
  Its seperated purposefully so when the screen is resized the mobile menu will toggle 
  on and off based on state */
 
@@ -60,21 +61,27 @@ const NavLinks = styled.div`
     
 
     & .link{
-        height:2.25rem;
+        height:3rem;
         width:100%;
-        padding:.75rem auto;
+        padding:.75rem 2rem;
         display:flex;
         align-items:center;
         text-decoration:none;
         color:black;
         cursor:pointer;
+
         
         }
+    & .active{
+        font-weight: bold;
+        background: white;
+
+    }
 
     @media only screen and (max-width:600px){
         display:${props => props.mobile !== true ? 'none' : 'flex'};
         background: lightgrey;
-        padding:1.5rem;
+        padding:.5rem 0;
     }
     
 `

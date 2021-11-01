@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react'
-import {NavLink, useHistory, useLocation} from 'react-router-dom'
+import {NavLink, useHistory, useLocation, Link} from 'react-router-dom'
 import { NavLinks, Nav, Icon } from './styled-components'
 import {hamburger,inbox,logoutIcon,compose,sent} from '../design-assets'
 
@@ -40,19 +40,19 @@ const Navigation = (props) => {
 
             <NavLinks mobile={display}>
                 <div>
-                    <NavLink className = 'link'to = {`${url}/compose`}>
+                    <Link className = 'link' to = {`${url}/compose`}>
                         <Icon img={compose} alt='new-message-icon'/>
                         <span>Compose</span>
-                    </NavLink>
+                    </Link>
 
                     <hr/>
 
-                    <NavLink className = 'link'to = {`${url}/inbox`}>
+                    <NavLink activeClassName='active' className = 'link' to = {`${url}/inbox`}>
                         <Icon img={inbox} alt='inbox-icon'/>
                         <span>Inbox</span>
                     </NavLink>
 
-                    <NavLink className = 'link'to = {`${url}/sent`}>
+                    <NavLink activeClassName='active' className = 'link' to = {`${url}/sent`}>
                         <Icon img={sent} alt='sent-icon'/>
                         <span>Sent</span>
                     </NavLink>

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 /* This function creates an Auth header to store the auth-token from localStorage
- and per the instructions sets the content-type to json to authenticate crud operation calls
+ and per the instructions sets the content-type to json. It authenticates crud operation calls
  to the server*/
 
 export const axiosWithAuth = () => {
