@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import {NavLink, useHistory, useLocation, Link} from 'react-router-dom'
 import { NavLinks, Nav, Icon, ComposeButton } from './styled-components'
-import {hamburger,inbox,logoutIcon,compose,sent} from '../design-assets'
+import {hamburger,inbox,logoutIcon,compose,sent, Logo} from '../design-assets'
 
 
 
@@ -30,7 +30,7 @@ const Navigation = (props) => {
 
             <div className='logo'>
 
-                Logo
+                <Logo height={'3rem'}/>
 
                 <div className='hamburger' onClick={()=> setDisplay(!display)}>
                     <Icon img={hamburger} alt='hamburger' />

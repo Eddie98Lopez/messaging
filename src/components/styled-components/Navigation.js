@@ -17,11 +17,14 @@ z-index:3;
 
 & .logo{
     display:flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items:center;
+    margin-bottom: 2rem;
 
     @media only screen and (max-width:600px){
         padding:1rem;
+        margin-bottom: 0;
+        justify-content: space-between;
     }
 
     & .hamburger{
@@ -38,6 +41,7 @@ z-index:3;
 @media only screen and (max-width:600px){
     height:auto;
     position:sticky;
+    
     overflow:hidden;
     top:0;
     padding:0;
