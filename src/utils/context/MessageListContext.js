@@ -1,5 +1,5 @@
 //import axios from "axios";
-import { axiosWithAuth } from "./axiosWithAuth";
+import { axiosWithAuth } from "../axiosWithAuth";
 import React, { createContext, useState, useEffect } from "react";
 
 export const MessagesContext = createContext();

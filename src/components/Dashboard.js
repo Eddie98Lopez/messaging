@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
 import { Navigation, MessageFolder, NewMessage, MessageDetails } from ".";
-import { MessagesProvider } from "../utils/MessageListContext";
+import { MessagesProvider } from "../utils";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
