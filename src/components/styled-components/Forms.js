@@ -1,24 +1,21 @@
 import styled from 'styled-components'
 
 const Form = styled.form`
-width:70%;
-margin:auto;
+padding: 2rem;
 height: auto;
 box-sizing: border-box;
 
 & button{
     float:right;
     margin-top:2rem;
-
-}
+};
 
 & .errors{
     color: crimson
-}
+};
 
 @media only screen and (max-width:600){
-    width: 95%;
-
+    background:blue;
 }
 
 `
