@@ -1,12 +1,12 @@
-import React, {useContext} from "react";
+import React from "react";
 import MessageThumb from "./MessageThumb";
 import { useParams } from "react-router-dom";
-import { MessagesContext } from "../utils";
+import { useStore } from "../utils";
 
 const MessageFolder = (props) => {
   //const { messages } = props;
   const { folder } = useParams();
-  const [messages,setMessages]= useContext(MessagesContext)
+  const [messages,]= useStore()
 
   return (
     <div>

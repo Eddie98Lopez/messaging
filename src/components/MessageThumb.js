@@ -1,15 +1,15 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useHistory, useParams } from "react-router";
 import { Icon, Thumb } from "./styled-components";
 import { deleteIcon, reply } from "../design-assets";
-import { MessagesContext, deleteMessage } from "../utils";
+import { deleteMessage, useStore } from "../utils";
 
 const MessageThumb = (props) => {
   const { title, sender, id, receiver } = props.message;
   const { push } = useHistory();
   const { folder } = useParams();
 
-  const [messages, setMessages] = useContext(MessagesContext);
+  const [messages, setMessages] = useStore();
 
   const detailLink = () => {
     push(`/dash/${folder}/${id}`);

@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import {
   messageSchema,
   axiosWithAuth,
-  MessagesContext,
   baseUrl,
   fetchMessages,
+  useStore
 } from "../utils";
 import{ Form, Input, Button, TextArea} from './styled-components'
 import * as Yup from "yup";
@@ -29,7 +29,7 @@ const NewMessage = (props) => {
   const [errors, setErrors] = useState(initialErrors);
   const [disabled, setDisabled] = useState(true);
   const [sendErr,setSendErr] = useState('')
-  const [messages, setMessages] = useContext(MessagesContext);
+  const [, setMessages] = useStore();
 
   const change = (e) => {
     const { name, value } = e.target;

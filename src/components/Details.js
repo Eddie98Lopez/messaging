@@ -1,21 +1,17 @@
-import React, { useContext } from "react";
-import { useParams, useHistory } from "react-router-dom";
-import { Icon } from "./styled-components";
-import { MessagesContext, deleteMessage} from "../utils";
+import React from "react";
 import { deleteIcon, reply } from "../design-assets";
+import { Icon } from "./styled-components";
+import { useStore, deleteMessage} from "../utils";
+import { useHistory } from "react-router";
 
-
-const MessageDetails = (props) => {
-  const { folder, id } = useParams();
+const Details = (props) => {
+  const { folder, message } = props;
+  const { title, body, sender, receiver, id } = message;
+  const [messages, setMessages] = useStore();
   const { push, goBack } = useHistory();
 
-  const [messages, setMessages] = useContext(MessagesContext);
-  const details = messages[`${folder}`].filter(item => item.id == id)[0]
-  const { title, body, sender, receiver } = details;
-
-
   const deleteAndGoBack = () => {
-    deleteMessage([messages,setMessages],id)
+    deleteMessage([messages, setMessages], id);
     push(`/dash/${folder}`);
   };
 
@@ -39,4 +35,4 @@ const MessageDetails = (props) => {
   );
 };
 
-export default MessageDetails;
+export default Details;

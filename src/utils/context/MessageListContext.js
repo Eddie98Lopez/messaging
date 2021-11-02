@@ -1,6 +1,6 @@
 //import axios from "axios";
 import { axiosWithAuth } from "../axiosWithAuth";
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect, useContext } from "react";
 
 export const MessagesContext = createContext();
 
@@ -33,3 +33,5 @@ export const MessagesProvider = (props) => {
     </MessagesContext.Provider>
   );
 };
+
+export const useStore = () => useContext(MessagesContext)

@@ -1,6 +1,6 @@
 import { axiosWithAuth } from "./axiosWithAuth";
 import loginSchema from "./schemas/loginSchema";
-import { MessagesContext, MessagesProvider } from "./context/MessageListContext";
+import { MessagesContext, MessagesProvider, useStore } from "./context/MessageListContext";
 import messageSchema from "./schemas/messageSchema";
 import { baseUrl } from "./baseUrl";
 import { fetchMessages } from "./fetchMessages";
@@ -14,5 +14,6 @@ export {
   MessagesProvider,
   baseUrl,
   fetchMessages,
-  deleteMessage
+  deleteMessage,
+  useStore
 };

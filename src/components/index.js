@@ -1,7 +1,7 @@
 import Dashboard from "./Dashboard";
 import LoginRoute from "./LoginRoute";
 import Navigation from "./Navigation";
-import MessageDetails from "./MessageDetails";
+import DetailsRoute from "./DetailsRoute";
 import MessageFolder from "./MessageFolder";
 import MessageThumb from "./MessageThumb";
 import NewMessage from "./NewMessage";
@@ -11,7 +11,7 @@ export {
   LoginRoute,
   Dashboard,
   Navigation,
-  MessageDetails,
+  DetailsRoute,
   MessageFolder,
   MessageThumb,
   NewMessage,
