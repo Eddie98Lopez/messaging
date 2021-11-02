@@ -2,8 +2,13 @@ import React from "react";
 import { Switch, Route, useRouteMatch, useHistory, useLocation } from "react-router-dom";
 import { Navigation, MessageFolder, NewMessage, DetailsRoute } from ".";
 import { MessagesProvider } from "../utils";
-import { FixedButton, DashWrapper } from "./styled-components";
+import { Button, DashWrapper } from "./styled-components";
 
+const fixedButton = `
+width: 150px;
+bottom: 5%;
+right:4%;
+`
 
 const Dashboard = (props) => {
   const { path, url } = useRouteMatch();
@@ -15,13 +20,10 @@ const Dashboard = (props) => {
       <Navigation url={url} />
       
       {pathname !== '/dash/compose' && (
-        <FixedButton 
-        innerText={'Compose'}
-        className='compose' 
-        onClick={()=> push('/dash/compose')}
-        width='150px'
-        bottom='4%'
-        right='6%'/>
+        <Button 
+        fixed={fixedButton}
+        onClick={()=>push('/dash/compose')}
+        className='compose'> Compose </Button>
       )}
 
       <Switch>

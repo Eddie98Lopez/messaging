@@ -28,4 +28,9 @@ export const Button = styled.button`
   & span {
     transform: translateY(2px);
   }
+
+  ${props => props.fixed ? `
+  z-index:3;
+  position:absolute;
+  ${props.fixed}`: ''}
 `;

@@ -3,7 +3,6 @@ import { Button } from "./Button";
 import { Nav, NavLinks } from "./Navigation";
 import Thumb from "./Thumb";
 import { Form, Input, TextArea } from "./Forms";
-import FixedButton from "./FixedButton";
 import { DashWrapper } from "./DashWrapper";
 
 
@@ -16,6 +15,5 @@ export {
   Form,
   Input,
   TextArea,
-  FixedButton,
   DashWrapper
 };
