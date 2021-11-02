@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route, useRouteMatch, useHistory, useLocation } from "react-router-dom";
-import { Navigation, MessageFolder, NewMessage, MessageDetails } from ".";
+import { Navigation, MessageFolder, NewMessage, DetailsRoute } from ".";
 import { MessagesProvider } from "../utils";
 import { Button } from "./styled-components";
 import styled from "styled-components";
@@ -58,7 +58,7 @@ const Dashboard = (props) => {
           </Route>
 
           <Route path={`${path}/:folder/:id`}>
-            <MessageDetails />
+            <DetailsRoute />
           </Route>
         </MessagesProvider>
       </Switch>

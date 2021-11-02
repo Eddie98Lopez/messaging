@@ -5,7 +5,7 @@ successful it updates local state by removing said message from both the inbox
 and sent folders.
 */
 
-export const deleteMessage = ([messages,setMessages], id, message) => {
+export const deleteMessage = ([messages,setMessages], id) => {
 
     axiosWithAuth()
     .delete(`https://messaging-test.bixly.com/messages/${id}`)
