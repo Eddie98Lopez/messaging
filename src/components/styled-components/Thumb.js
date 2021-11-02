@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Thumb = styled.div`
-  height: 3rem;
+  height: 4.5rem;
   width: 95%;
   margin: 0 auto;
   border-bottom: .1px solid grey;
@@ -19,13 +19,14 @@ const Thumb = styled.div`
     & h3 {
       font-style: bold;
       font-weight: 700;
-      display: inline;
+      color: #757575;
     }
 
     & p {
       color: grey;
       opacity: 0.5;
-      display: inline;
+      font-size:.8rem;
+      margin-bottom: .25rem;
     }
   }
 

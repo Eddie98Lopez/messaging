@@ -1,7 +1,7 @@
 import './App.css';
 import styled from 'styled-components'
 import {Switch, Route} from 'react-router-dom'
-import { Dashboard,Login, PrivateRoute} from './components';
+import { Dashboard,LoginRoute, PrivateRoute} from './components';
 
 const AppContainer = styled.div`
 width: 100%;
@@ -16,7 +16,7 @@ function App() {
         <Route exact path="/"></Route>
 
         <Route exact path="/login">
-          <Login/>
+          <LoginRoute/>
         </Route>
         
         <PrivateRoute path="/dash" component={Dashboard}/>

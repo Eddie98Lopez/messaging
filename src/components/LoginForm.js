@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios'
 import { useHistory } from "react-router-dom";
+import {Form, Input} from './styled-components'
 import {loginSchema} from "../utils";
 import * as Yup from "yup";
 
-const Login = (props) => {
+const LoginForm = (props) => {
     const {push} = useHistory()
   const initialForm = {
     username: "",
@@ -19,6 +20,7 @@ const Login = (props) => {
   const [form, setForm] = useState(initialForm);
   const [errs, setErrs] = useState(initialErrs);
   const [disabled, setDisabled] = useState(true);
+  const [loginErr,setLoginErr] = useState('')
 
   const change = (e) => {
     const { name, value } = e.target;
@@ -45,7 +47,7 @@ const Login = (props) => {
 
             })
             .catch(err => {
-                console.log(err)
+                setLoginErr('username or password is incorrect')
             }) 
   };
 
@@ -55,33 +57,35 @@ const Login = (props) => {
 
   return (
     <div>
-      <form onSubmit={submit}>
+      <Form onSubmit={submit}>
         <div>
-          <input
+          <Input
             name="username"
             type="text"
             value={form.username}
             onChange={change}
-            placeholder="Username"
+            placeholder="username"
           />
-          <div>{errs.username}</div>
+          <div className = 'errors'>{errs.username}</div>
         </div>
 
         <div>
-          <input
+          <Input
             name="password"
             type="password"
             value={form.password}
             onChange={change}
-            placeholder="Password"
+            placeholder="password"
           />
-          <div>{errs.password}</div>
+          <div className = 'errors'>{errs.password}</div>
         </div>
 
+        <div className='errors'>{loginErr}</div>
+
         <button disabled={disabled}>login</button>
-      </form>
+      </Form>
     </div>
   );
 };
 
-export default Login;
+export default LoginForm;

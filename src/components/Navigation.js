@@ -30,7 +30,7 @@ const Navigation = (props) => {
 
             <div className='logo'>
 
-                <Logo height={'3rem'}/>
+                <Logo height={'3rem'} fill='white'/>
 
                 <div className='hamburger' onClick={()=> setDisplay(!display)}>
                     <Icon img={hamburger} alt='hamburger' />
