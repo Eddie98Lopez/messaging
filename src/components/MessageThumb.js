@@ -5,7 +5,7 @@ import { deleteIcon, reply } from "../design-assets";
 import { deleteMessage, useStore } from "../utils";
 
 const MessageThumb = (props) => {
-  const { title, sender, id, receiver } = props.message;
+  const { title, sender, id, receiver,read } = props.message;
   const { push } = useHistory();
   const { folder } = useParams();
 
@@ -18,7 +18,7 @@ const MessageThumb = (props) => {
 
 
   return (
-    <Thumb>
+    <Thumb read={read}>
       <div className="messInfo" onClick={detailLink}>
         <p>{folder === "sent" ? receiver : sender}</p>
         <h3>{title}</h3>

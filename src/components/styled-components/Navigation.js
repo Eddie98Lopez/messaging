@@ -86,14 +86,22 @@ const NavLinks = styled.div`
         width:100%;
         padding:.75rem 3rem;
         display:flex;
+        justify-content: space-between;
         align-items:center;
         text-decoration:none;
         color:white;
         font-family: loos-normal, sans-serif;
         cursor:pointer;
-
         
         }
+
+    & .logout{
+        justify-content: flex-start;
+        & span{
+            margin-left: .5rem;
+
+        }
+    }
     & .active{
         font-weight: 700;
         background: white;
