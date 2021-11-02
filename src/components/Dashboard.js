@@ -6,8 +6,8 @@ import { Button, DashWrapper } from "./styled-components";
 
 const fixedButton = `
 width: 150px;
-bottom: 5%;
-right:4%;
+bottom: 4%;
+right:6%;
 `
 
 const Dashboard = (props) => {

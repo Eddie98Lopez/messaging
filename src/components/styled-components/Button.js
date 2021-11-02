@@ -33,4 +33,6 @@ export const Button = styled.button`
   z-index:3;
   position:absolute;
   ${props.fixed}`: ''}
+
+  ${props => props.style ? props.style : ''}
 `;
