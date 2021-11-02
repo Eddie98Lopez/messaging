@@ -1,25 +1,23 @@
-import React, { useContext } from 'react'
+import React from "react";
 import { deleteIcon, reply } from "../design-assets";
 import { Icon } from "./styled-components";
-import { MessagesContext, deleteMessage} from "../utils";
-import { useHistory } from 'react-router';
+import { useStore, deleteMessage} from "../utils";
+import { useHistory } from "react-router";
 
 const Details = (props) => {
-    const {folder, message} = props
-    const {title,body, sender, receiver, id} = message
-    const [messages,setMessages] = useContext(MessagesContext)
-    const {push, goBack} = useHistory()
-    console.log(props)
+  const { folder, message } = props;
+  const { title, body, sender, receiver, id } = message;
+  const [messages, setMessages] = useStore();
+  const { push, goBack } = useHistory();
 
-    const deleteAndGoBack = () => {
-        deleteMessage([messages,setMessages],id)
-        push(`/dash/${folder}`);
-      };
+  const deleteAndGoBack = () => {
+    deleteMessage([messages, setMessages], id);
+    push(`/dash/${folder}`);
+  };
 
-
-    return(
-        <div>
-                    <div>
+  return (
+    <div>
+      <div>
         <Icon alt="go back" onClick={goBack} />
         <Icon img={reply} alt="reply" onClick={() => push("/dash/compose")} />
       </div>
@@ -33,8 +31,8 @@ const Details = (props) => {
       <div onClick={deleteAndGoBack}>
         <Icon img={deleteIcon} alt="delete" />
       </div>
-        </div>
-    )
-}
+    </div>
+  );
+};
 
-export default Details
+export default Details;

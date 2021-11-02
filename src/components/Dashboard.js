@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route, useRouteMatch, useHistory, useLocation } from "react-router-dom";
 import { Navigation, MessageFolder, NewMessage, DetailsRoute } from ".";
-import { MessagesProvider } from "../utils";
+import { MessagesProvider, useStore } from "../utils";
 import { Button } from "./styled-components";
 import styled from "styled-components";
 

@@ -11,6 +11,7 @@ export const deleteMessage = ([messages,setMessages], id) => {
     .delete(`https://messaging-test.bixly.com/messages/${id}`)
     .then(res => {
         setMessages({
+          ...messages,
           inbox:messages.inbox.filter((message) => message.id != id),
           sent: messages.sent.filter((message) => message.id != id),
         });
