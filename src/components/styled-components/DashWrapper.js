@@ -7,5 +7,18 @@ export const DashWrapper = styled.div`
   grid-template-columns: 1fr 4fr;
   grid-template-rows: 100%;
 
+  & .compose{
+    display:none;
+
+  }
+  @media only screen and (max-width: 600px) {
+    display: block;
+
+    & .compose{
+      display: block;
+
+    }
+  }
+
 
 `

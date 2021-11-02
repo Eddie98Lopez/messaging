@@ -4,7 +4,8 @@ import styled from "styled-components";
 const Ico = styled.div`
   height: ${(props) => (props.height ? props.height : "1.5rem")};
   display: block;
-  margin-right: 1rem;
+  box-sizing:border-box;
+  padding:.1rem;
   cursor: pointer;
 
   & img {

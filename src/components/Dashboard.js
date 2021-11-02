@@ -1,51 +1,30 @@
 import React from "react";
 import { Switch, Route, useRouteMatch, useHistory, useLocation } from "react-router-dom";
 import { Navigation, MessageFolder, NewMessage, DetailsRoute } from ".";
-import { MessagesProvider, useStore } from "../utils";
-import { Button } from "./styled-components";
-import styled from "styled-components";
+import { MessagesProvider } from "../utils";
+import { Button, DashWrapper } from "./styled-components";
 
-const Wrapper = styled.div`
-  width: 100%;
-  height: inherit;
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-template-rows: 100%;
-
-  & .compose{
-    display:none;
-    z-index:3;
-    position:absolute;
-    bottom: 4%;
-    right 6%;
-  }
-
-  @media only screen and (max-width: 600px) {
-    display: block;
-
-    & .compose{
-      display: block;
-
-    }
-  }
-
-
-`;
+const fixedButton = `
+width: 150px;
+bottom: 4%;
+right:6%;
+`
 
 const Dashboard = (props) => {
   const { path, url } = useRouteMatch();
   const {pathname} = useLocation()
-  
-  
   const {push} = useHistory()
 
   return (
-    <Wrapper>
+    <DashWrapper>
       <Navigation url={url} />
       
-      {pathname !== '/dash/compose' && (<div className='compose' onClick={()=>push('/dash/compose')}>
-      <Button width='150px'>Compose</Button>
-      </div>)}
+      {pathname !== '/dash/compose' && (
+        <Button 
+        fixed={fixedButton}
+        onClick={()=>push('/dash/compose')}
+        className='compose'> Compose </Button>
+      )}
 
       <Switch>
         <MessagesProvider>
@@ -62,7 +41,7 @@ const Dashboard = (props) => {
           </Route>
         </MessagesProvider>
       </Switch>
-    </Wrapper>
+    </DashWrapper>
   );
 };
 

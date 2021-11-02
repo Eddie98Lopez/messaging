@@ -5,5 +5,6 @@ import compose from '../design-assets/compose.svg'
 import sent from '../design-assets/sent.png'
 import deleteIcon from '../design-assets/deleteIcon.svg'
 import reply from './reply.png'
+import backIcon from './backIcon.png'
 import Logo from './logo.js'
-export {hamburger,inbox,logoutIcon,compose,sent,deleteIcon,reply, Logo}
+export {hamburger,inbox,logoutIcon,compose,sent,deleteIcon,reply, Logo,backIcon}
