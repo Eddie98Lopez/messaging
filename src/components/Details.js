@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { deleteIcon, reply, backIcon } from "../design-assets";
 import { Icon, DetailsWrapper,Button,DetailButtons } from "./styled-components";
 import { useStore, deleteMessage} from "../utils";
@@ -17,6 +17,11 @@ const Details = (props) => {
     deleteMessage([messages, setMessages], id);
     push(`/dash/${folder}`);
   };
+
+  useEffect(()=>{
+    setMessages({...messages,
+    [folder]:[...messages[`${folder}`].filter(item => item.id!=id),{...message, read:true}]})
+  },[])
 
   return (
     <div>
