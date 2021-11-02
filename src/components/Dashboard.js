@@ -17,6 +17,7 @@ const Dashboard = (props) => {
 
   return (
     <DashWrapper>
+      <MessagesProvider>
       <Navigation url={url} />
       
       {pathname !== '/dash/compose' && (
@@ -27,7 +28,7 @@ const Dashboard = (props) => {
       )}
 
       <Switch>
-        <MessagesProvider>
+
           <Route exact path={`${path}/compose`}>
             <NewMessage/>
           </Route>
@@ -39,8 +40,9 @@ const Dashboard = (props) => {
           <Route path={`${path}/:folder/:id`}>
             <DetailsRoute />
           </Route>
-        </MessagesProvider>
+        
       </Switch>
+      </MessagesProvider>
     </DashWrapper>
   );
 };
