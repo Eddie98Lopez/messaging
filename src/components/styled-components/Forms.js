@@ -8,6 +8,7 @@ box-sizing: border-box;
 
 & button{
     float:right;
+    margin-top:2rem;
 
 }
 
@@ -17,6 +18,7 @@ box-sizing: border-box;
 
 @media only screen and (max-width:600){
     width: 95%;
+
 }
 
 `
@@ -29,7 +31,7 @@ height: 3rem;
 padding:.05rem 0px;
 margin: .5rem 0;
 border:none;
-border-bottom: solid 2px orange;
+border-bottom: solid 2px #E57E31;
 background: white;
 border-radius: 2px;
 font-size: 1.5rem;

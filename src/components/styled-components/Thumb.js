@@ -20,6 +20,9 @@ const Thumb = styled.div`
       font-style: bold;
       font-weight: 700;
       color: #757575;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow: ellipsis;
     }
 
     & p {
@@ -44,6 +47,14 @@ const Thumb = styled.div`
     & .buttons {
       opacity: 1;
       transition: 0.3s ease-in-out;
+    }
+  }
+
+  @media only screen and (max-width: 768px){
+    width:100%;
+
+    & .buttons{
+      opacity:1;
     }
   }
 `;

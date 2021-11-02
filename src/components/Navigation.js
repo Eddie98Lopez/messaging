@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react'
-import {NavLink, useHistory, useLocation, Link} from 'react-router-dom'
-import { NavLinks, Nav, Icon, ComposeButton } from './styled-components'
+import {NavLink, useHistory, useLocation } from 'react-router-dom'
+import { NavLinks, Nav, Icon, Button } from './styled-components'
 import {hamburger,inbox,logoutIcon,compose,sent, Logo} from '../design-assets'
 
 
@@ -32,7 +32,7 @@ const Navigation = (props) => {
 
                 <Logo height={'3rem'} fill='white'/>
 
-                <div className='hamburger' onClick={()=> setDisplay(!display)}>
+                <div className='hamburger svg' onClick={()=> setDisplay(!display)}>
                     <Icon img={hamburger} alt='hamburger' />
                 </div>
 
@@ -40,12 +40,12 @@ const Navigation = (props) => {
 
             <NavLinks mobile={display}>
                 <div className='top'>
-                    <ComposeButton onClick={()=>push(`${url}/compose`)}>
+                    <Button className='disappear' onClick={()=>push(`${url}/compose`)} width='80%'>
                         <Icon img={compose} alt='new-message-icon'/>
                         <span>Compose</span>
-                    </ComposeButton>
+                    </Button>
 
-                    <div className='divider'></div>
+                    <div className='divider disappear'></div>
 
                     <NavLink activeClassName='active' className = 'link' to = {`${url}/inbox`}>
                         <Icon img={inbox} alt='inbox-icon'/>

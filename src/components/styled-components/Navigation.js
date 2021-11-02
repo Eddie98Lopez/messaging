@@ -23,8 +23,10 @@ z-index:3;
 
     @media only screen and (max-width:600px){
         padding:1rem;
+        height:3.5rem;
         margin-bottom: 0;
         justify-content: space-between;
+
     }
 
     & .hamburger{
@@ -41,10 +43,11 @@ z-index:3;
 @media only screen and (max-width:600px){
     height:auto;
     position:sticky;
-    
     overflow:hidden;
     top:0;
     padding:0;
+
+
 }
 
 `
@@ -98,10 +101,15 @@ const NavLinks = styled.div`
 
     }
 
+
     @media only screen and (max-width:600px){
         display:${props => props.mobile !== true ? 'none' : 'flex'};
         background: lightgrey;
         padding:.5rem 0;
+
+        & .disappear{
+            display: none;
+        }
     }
     
 `

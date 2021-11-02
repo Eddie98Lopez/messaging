@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios'
 import { useHistory } from "react-router-dom";
-import {Form, Input} from './styled-components'
+import {Form, Input,Button} from './styled-components'
 import {loginSchema} from "../utils";
 import * as Yup from "yup";
 
@@ -82,7 +82,7 @@ const LoginForm = (props) => {
 
         <div className='errors'>{loginErr}</div>
 
-        <button disabled={disabled}>login</button>
+        <Button disabled={disabled} padSide='5rem'>Login</Button>
       </Form>
     </div>
   );
