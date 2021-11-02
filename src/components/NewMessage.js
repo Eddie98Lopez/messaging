@@ -6,10 +6,10 @@ import {
   baseUrl,
   fetchMessages,
 } from "../utils";
+import{ Form, Input, Button, TextArea} from './styled-components'
 import * as Yup from "yup";
 import { useHistory } from "react-router-dom";
 
-//import axios from 'axios'
 
 const NewMessage = (props) => {
   const { push } = useHistory();
@@ -28,6 +28,7 @@ const NewMessage = (props) => {
   const [draft, setDraft] = useState(initialDraft);
   const [errors, setErrors] = useState(initialErrors);
   const [disabled, setDisabled] = useState(true);
+  const [sendErr,setSendErr] = useState('')
   const [messages, setMessages] = useContext(MessagesContext);
 
   const change = (e) => {
@@ -49,7 +50,7 @@ const NewMessage = (props) => {
           : console.log("something went wrong");
       } 
       catch {
-        console.log("something went wrong");
+        setSendErr('Your message did dont send. Please try again.');
       }
     };
     fetchData();
@@ -62,42 +63,44 @@ const NewMessage = (props) => {
 
   return (
     <div>
-      <form onSubmit={submit}>
+      <Form onSubmit={submit}>
         <div>
-          <input
+          <Input
             name="title"
             type="text"
             value={draft.title}
             onChange={change}
             placeholder="Title"
           />
-          <div>{errors.title}</div>
+          <div className='errors'>{errors.title}</div>
         </div>
 
         <div>
-          <input
+          <Input
             name="receiver"
             type="text"
             value={draft.receiver}
             onChange={change}
             placeholder="Recipient"
           />
-          <div>{errors.receiver}</div>
+          <div className='errors'>{errors.receiver}</div>
         </div>
 
         <div>
-          <textarea
+          <TextArea
             type="text"
             name="body"
             value={draft.body}
             onChange={change}
             placeholder="type your message here..."
           />
-          <div>{errors.body}</div>
+          <div className='errors'>{errors.body}</div>
         </div>
 
-        <button disabled={disabled}>Send</button>
-      </form>
+        <div className='errors'>{sendErr}</div>
+
+        <Button disabled={disabled}>Send</Button>
+      </Form>
     </div>
   );
 };

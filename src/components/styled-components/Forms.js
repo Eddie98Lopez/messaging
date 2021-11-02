@@ -47,6 +47,27 @@ color:#E57E31;
     opacity:.25;
 }`
 
+const TextArea = styled.textarea`
+
+outline: none;
+width: 100%;
+box-sizing: border-box;
+height: 15rem;
+padding:.05rem 0px;
+margin: .5rem 0;
+border:none;
+background: #f5f5f5;
+border-radius: 5px;
+font-size: 1rem;
+color:grey;
+
+&::placeholder{
+    color: #E57E31;
+    font-weight: bold;
+    opacity:.25;
+}
+`
 
 
-export{ Form, Input }
+
+export{ Form, Input, TextArea }
