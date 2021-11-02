@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route, useRouteMatch, useHistory, useLocation } from "react-router-dom";
-import { Navigation, MessageFolder, NewMessage, DetailsRoute } from ".";
+import { Navigation, FolderRoute, NewMessage, DetailsRoute } from ".";
 import { MessagesProvider } from "../utils";
 import { Button, DashWrapper } from "./styled-components";
 
@@ -33,7 +33,7 @@ const Dashboard = (props) => {
           </Route>
 
           <Route exact path={`${path}/:folder`}>
-            <MessageFolder />
+            <FolderRoute />
           </Route>
 
           <Route path={`${path}/:folder/:id`}>
