@@ -1,5 +1,19 @@
 import styled from "styled-components";
 
+const DetailButtons = styled.div`
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:1rem;
+
+& button{
+    display:inline-block;
+    box-shadow:none;
+    background: #e57e31;
+    margin: 0 .4rem;
+}
+`
+
 const DetailsWrapper = styled.div`
   box-sizing: border-box;
   padding: 3rem;
@@ -36,4 +50,6 @@ const DetailsWrapper = styled.div`
   }
 `;
 
-export { DetailsWrapper };
+
+
+export { DetailsWrapper, DetailButtons};
