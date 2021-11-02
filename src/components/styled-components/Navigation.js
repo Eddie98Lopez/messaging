@@ -98,6 +98,7 @@ const NavLinks = styled.div`
         font-weight: 700;
         background: white;
         color: #E57E31;
+        transition: .25s ease-in-out;
 
     }
 
