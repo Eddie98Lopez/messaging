@@ -20,7 +20,7 @@ const MessageThumb = (props) => {
   return (
     <Thumb>
       <div className="messInfo" onClick={detailLink}>
-        <p>{folder === "sent" ? receiver : sender} | </p>
+        <p>{folder === "sent" ? receiver : sender}</p>
         <h3>{title}</h3>
       </div>
 

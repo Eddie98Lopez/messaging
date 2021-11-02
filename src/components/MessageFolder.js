@@ -10,10 +10,9 @@ const MessageFolder = (props) => {
 
   return (
     <div>
-      <h2>{folder}</h2>
-
-      {folder !== 'compose' && messages[`${folder}`].map((message) => (
-        <MessageThumb key={message.id} message={message} />
+      {folder !== 'compose' && 
+      messages[`${folder}`].map((message) => (
+      <MessageThumb key={message.id} message={message} />
       ))}
     </div>
   );

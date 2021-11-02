@@ -1,14 +1,16 @@
 import styled from "styled-components";
 
 const Thumb = styled.div`
-  height: 3rem;
+  height: 4.5rem;
   width: 95%;
-  margin: 0.15rem auto;
+  margin: 0 auto;
+  border-bottom: .1px solid grey;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #fafafa;
+  background: #F6F1E3;
   padding: 0 2rem;
+  transition: .4s ease-in-out;
 
   & .messInfo {
     width: 80%;
@@ -17,13 +19,17 @@ const Thumb = styled.div`
     & h3 {
       font-style: bold;
       font-weight: 700;
-      display: inline;
+      color: #757575;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow: ellipsis;
     }
 
     & p {
       color: grey;
       opacity: 0.5;
-      display: inline;
+      font-size:.8rem;
+      margin-bottom: .25rem;
     }
   }
 
@@ -37,9 +43,18 @@ const Thumb = styled.div`
   }
 
   &:hover {
+    background: #fff9f7;
     & .buttons {
       opacity: 1;
       transition: 0.3s ease-in-out;
+    }
+  }
+
+  @media only screen and (max-width: 768px){
+    width:100%;
+
+    & .buttons{
+      opacity:1;
     }
   }
 `;

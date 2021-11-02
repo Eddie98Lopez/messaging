@@ -1,13 +1,14 @@
 import styled from 'styled-components'
 
-/*Below is the parent nav element that will house navlinks. */
+/*Below is the parent nav element that will house navLinks. */
 
 const Nav = styled.nav`
 width: 100%;
 height: 100%;
+padding: 2rem 0;
 align-items: left;
-background: #c2c2c2;
-padding:2rem;
+background: #E57E31;
+color:white;
 display:flex;
 flex-direction:column;
 justify-content:space-between;
@@ -16,11 +17,16 @@ z-index:3;
 
 & .logo{
     display:flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items:center;
+    margin-bottom: 2rem;
 
     @media only screen and (max-width:600px){
         padding:1rem;
+        height:3.5rem;
+        margin-bottom: 0;
+        justify-content: space-between;
+
     }
 
     & .hamburger{
@@ -37,15 +43,18 @@ z-index:3;
 @media only screen and (max-width:600px){
     height:auto;
     position:sticky;
+    overflow:hidden;
     top:0;
     padding:0;
+
+
 }
 
 `
 
 
 
-/*Below is "NavLinks" a seperate div of just the links.
+/*Below is "NavLinks" a seperzate div of just the links.
  Its seperated purposefully so when the screen is resized the mobile menu will toggle 
  on and off based on state */
 
@@ -56,25 +65,51 @@ const NavLinks = styled.div`
     display:flex;
     flex-direction:column;
     justify-content:space-between;
-    align-items:right;
+    align-items:auto;
+
+    & .top{
+        display:inherit;
+        flex-direction: inherit;
+    }
+
+    & .divider{
+        height: 1.5px;
+        width: 90%;
+        margin:auto;
+        background: white;
+        margin: 1rem;
+    }
     
 
     & .link{
-        height:2.25rem;
+        height:3rem;
         width:100%;
-        padding:.75rem auto;
+        padding:.75rem 3rem;
         display:flex;
         align-items:center;
         text-decoration:none;
-        color:black;
+        color:white;
+        font-family: loos-normal, sans-serif;
         cursor:pointer;
+
         
         }
+    & .active{
+        font-weight: 700;
+        background: white;
+        color: #E57E31;
+
+    }
+
 
     @media only screen and (max-width:600px){
         display:${props => props.mobile !== true ? 'none' : 'flex'};
         background: lightgrey;
-        padding:1.5rem;
+        padding:.5rem 0;
+
+        & .disappear{
+            display: none;
+        }
     }
     
 `

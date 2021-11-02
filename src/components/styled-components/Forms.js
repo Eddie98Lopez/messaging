@@ -1,0 +1,52 @@
+import styled from 'styled-components'
+
+const Form = styled.form`
+width:70%;
+margin:auto;
+height: auto;
+box-sizing: border-box;
+
+& button{
+    float:right;
+    margin-top:2rem;
+
+}
+
+& .errors{
+    color: crimson
+}
+
+@media only screen and (max-width:600){
+    width: 95%;
+
+}
+
+`
+
+const Input = styled.input`
+outline: none;
+width: 100%;
+box-sizing: border-box;
+height: 3rem;
+padding:.05rem 0px;
+margin: .5rem 0;
+border:none;
+border-bottom: solid 2px #E57E31;
+background: white;
+border-radius: 2px;
+font-size: 1.5rem;
+color:#E57E31;
+
+@media only screen and (max-width:600){
+    height:4rem;
+}
+
+&::placeholder{
+    color: #E57E31;
+    font-weight: bold;
+    opacity:.25;
+}`
+
+
+
+export{ Form, Input }

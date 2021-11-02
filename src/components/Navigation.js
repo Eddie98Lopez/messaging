@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react'
-import {NavLink, useHistory, useLocation} from 'react-router-dom'
-import { NavLinks, Nav, Icon } from './styled-components'
-import {hamburger,inbox,logoutIcon,compose,sent} from '../design-assets'
+import {NavLink, useHistory, useLocation } from 'react-router-dom'
+import { NavLinks, Nav, Icon, Button } from './styled-components'
+import {hamburger,inbox,logoutIcon,compose,sent, Logo} from '../design-assets'
 
 
 
@@ -30,29 +30,29 @@ const Navigation = (props) => {
 
             <div className='logo'>
 
-                Logo
+                <Logo height={'3rem'} fill='white'/>
 
-                <div className='hamburger' onClick={()=> setDisplay(!display)}>
+                <div className='hamburger svg' onClick={()=> setDisplay(!display)}>
                     <Icon img={hamburger} alt='hamburger' />
                 </div>
 
             </div>
 
             <NavLinks mobile={display}>
-                <div>
-                    <NavLink className = 'link'to = {`${url}/compose`}>
+                <div className='top'>
+                    <Button className='disappear' onClick={()=>push(`${url}/compose`)} width='80%'>
                         <Icon img={compose} alt='new-message-icon'/>
                         <span>Compose</span>
-                    </NavLink>
+                    </Button>
 
-                    <hr/>
+                    <div className='divider disappear'></div>
 
-                    <NavLink className = 'link'to = {`${url}/inbox`}>
+                    <NavLink activeClassName='active' className = 'link' to = {`${url}/inbox`}>
                         <Icon img={inbox} alt='inbox-icon'/>
                         <span>Inbox</span>
                     </NavLink>
 
-                    <NavLink className = 'link'to = {`${url}/sent`}>
+                    <NavLink activeClassName='active' className = 'link' to = {`${url}/sent`}>
                         <Icon img={sent} alt='sent-icon'/>
                         <span>Sent</span>
                     </NavLink>
