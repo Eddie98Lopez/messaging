@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory, useParams } from "react-router";
 import { Icon, Thumb } from "./styled-components";
 import { deleteIcon, reply } from "../design-assets";
-import { deleteMessage, useStore} from "../utils";
+import { deleteMessage, useStore, replyMessage} from "../utils";
 
 const MessageThumb = (props) => {
   const { title, sender, id, receiver,read } = props.message;
@@ -14,10 +14,10 @@ const MessageThumb = (props) => {
     e.stopPropagation()
     push(`/dash/folder/${folder}/${id}`)}
   
-  const toCompose = e => {
-    e.stopPropagation()
-    dispatch({type:'REPLY', payload:{...props.message}})
-    push('/dash/compose')
+  const toReply = e => {
+    e.stopPropagation();
+    replyMessage(dispatch,{title,sender})
+    push("/dash/compose");
   }
 
   return (
@@ -32,7 +32,7 @@ const MessageThumb = (props) => {
           img={reply}
           alt="reply"
           height={"1.25rem"}
-          onClick={toCompose}
+          onClick={toReply}
         />
 
         <Icon

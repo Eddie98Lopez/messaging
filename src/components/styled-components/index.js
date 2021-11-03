@@ -9,6 +9,7 @@ import { DashWrapper, MainWrapper } from "./DashWrapper";
 import { HomeWrapper } from "./HomeWrapper";
 import { AppContainer } from "./AppContainer";
 import {LoginWrapper} from './LoginWrapper'
+import { DetailRouteWrapper } from "./DetailRouteWrapper";
  
 
 export {
@@ -27,5 +28,6 @@ export {
   MainWrapper,
   HomeWrapper,
   AppContainer,
-  LoginWrapper
+  LoginWrapper,
+  DetailRouteWrapper
 };
