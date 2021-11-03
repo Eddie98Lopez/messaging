@@ -1,44 +1,29 @@
-import React, { useEffect } from "react";
-import { Switch, Route, useRouteMatch, useHistory} from "react-router-dom";
-import { Navigation, FolderRoute, NewMessage, DetailsRoute } from ".";
+import React from "react";
+import { Switch, Route, useRouteMatch } from "react-router-dom";
+import { Navigation, FolderRoute, NewMessage } from ".";
 import { StoreProvider } from "../utils";
 import ErrorMessage from "./ErrorMessage";
-import { Button, DashWrapper,MainWrapper } from "./styled-components";
+import { DashWrapper } from "./styled-components";
 
-const fixedButton = `
-width: 150px;
-bottom: 4%;
-right:6%;
-`
 
 const Dashboard = (props) => {
   const { path, url } = useRouteMatch();
-  const {push} = useHistory()
-
-
 
   return (
     <DashWrapper>
       <StoreProvider>
-      <ErrorMessage/>
-      <Navigation url={url} />
-      
+        <ErrorMessage />
+        <Navigation url={url} />
+
         <Switch>
-  
-    <Route path={`${path}/compose`}>
-            <NewMessage/>
+          <Route path={`${path}/compose`}>
+            <NewMessage />
           </Route>
-   
 
- 
- <Route path={`${path}/folder/:folder`}>
-  <FolderRoute />
-</Route>
- 
-
+          <Route path={`${path}/folder/:folder`}>
+            <FolderRoute />
+          </Route>
         </Switch>
-
-
       </StoreProvider>
     </DashWrapper>
   );
