@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import { storeReducer } from "./reducer";
-import { fetchMessages } from "..";
+import { fetchMessages , getMsgsAction, getMsgsErr} from "..";
 
 // MessageContext will act as a state store
 export const StoreContext = createContext();
@@ -33,7 +33,7 @@ export const StoreProvider = (props) => {
         const folders = await fetchMessages();
         dispatch({ type: "GET_MESSAGES", payload: folders });
       } catch {
-        console.log("something went wrong");
+        dispatch({type:getMsgsAction, payload:getMsgsErr})
       }
     };
 

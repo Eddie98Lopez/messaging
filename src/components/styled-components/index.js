@@ -1,4 +1,5 @@
 import { Icon } from "./Icon";
+import { ErrorWrapper } from "./ErrorWrapper";
 import { Button } from "./Button";
 import { Nav, NavLinks } from "./Navigation";
 import { DetailsWrapper, DetailButtons } from "./DetailsWrapper";
@@ -18,5 +19,6 @@ export {
   TextArea,
   DashWrapper,
   DetailsWrapper,
-  DetailButtons
+  DetailButtons,
+  ErrorWrapper
 };
