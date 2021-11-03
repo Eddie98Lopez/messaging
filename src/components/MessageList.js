@@ -1,6 +1,5 @@
 import React from 'react'
-
-import MessageThumb from "./MessageThumb";
+import MessageItem from "./MessageItem";
 
 const MessageList = (props) => {
 const {folders,folder} = props
@@ -9,7 +8,7 @@ const {folders,folder} = props
         <div >
         {folders[`${folder}`].length === 0
         ? `${folder} is empty`
-        :folders[`${folder}`].map(item => <MessageThumb key={item.id} message={item}/>)
+        :folders[`${folder}`].map(item => <MessageItem key={item.id} message={item}/>)
         }
       </div>
     )

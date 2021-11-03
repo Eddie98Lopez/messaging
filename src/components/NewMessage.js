@@ -60,7 +60,7 @@ const NewMessage = (props) => {
         const newFolders = await fetchMessages()
 
         newMessage.data.data = "success" && dispatch({type:getMsgsAction, payload:newFolders})
-        push("/dash/inbox");} 
+        push("/dash/folder/inbox");} 
 
       catch {
         dispatch({type:newErrAction, payload: sendErrMsg})

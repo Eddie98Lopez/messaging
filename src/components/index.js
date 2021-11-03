@@ -1,10 +1,10 @@
 import Dashboard from "./route-components/Dashboard";
 import HomeRoute from "./route-components/HomeRoute";
-import LoginRoute from "./LoginRoute";
+import LoginRoute from "./route-components/LoginRoute";
 import Navigation from "./Navigation";
 import DetailsRoute from "./route-components/DetailsRoute";
 import FolderRoute from "./route-components/FolderRoute";
-import MessageThumb from "./MessageThumb";
+import MessageItem from "./MessageItem";
 import NewMessage from "./NewMessage";
 import MessageList from "./MessageList";
 import { PrivateRoute } from "./PrivateRoute";
@@ -16,7 +16,7 @@ export {
   Navigation,
   DetailsRoute,
   FolderRoute,
-  MessageThumb,
+  MessageItem,
   NewMessage,
   MessageList,
   PrivateRoute,

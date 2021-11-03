@@ -1,18 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
 import { useHistory, useParams } from "react-router";
 import { Icon, Thumb } from "./styled-components";
 import { deleteIcon, reply } from "../design-assets";
 import { deleteMessage, useStore, replyMessage} from "../utils";
 
-const MessageThumb = (props) => {
-  const { title, sender, id, receiver,read } = props.message;
+const MessageItem = (props) => {
+  const { title, sender, id, receiver, read} = props.message;
+
   const { push } = useHistory();
   const { folder } = useParams();
   const {dispatch} = useStore()
 
   const handleClick= (e) => {
     e.stopPropagation()
-    push(`/dash/folder/${folder}/${id}`)}
+    push(`/dash/folder/${folder}/${id}`)
+  }
   
   const toReply = e => {
     e.stopPropagation();
@@ -46,4 +48,4 @@ const MessageThumb = (props) => {
   );
 };
 
-export default MessageThumb;
+export default MessageItem;

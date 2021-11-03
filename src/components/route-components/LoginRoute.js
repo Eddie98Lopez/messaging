@@ -1,7 +1,7 @@
 import React from "react";
-import LoginForm from "./LoginForm";
-import { Logo } from "../design-assets";
-import { LoginWrapper } from "./styled-components";
+import LoginForm from "../LoginForm";
+import { Logo } from "../../design-assets";
+import { LoginWrapper } from "../styled-components";
 
 const LoginRoute = (props) => {
   return (
