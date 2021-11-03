@@ -1,5 +1,5 @@
-import React from "react";
-import { Switch, Route, useRouteMatch, useHistory, useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Switch, Route, useRouteMatch, useHistory} from "react-router-dom";
 import { Navigation, FolderRoute, NewMessage, DetailsRoute } from ".";
 import { StoreProvider } from "../utils";
 import ErrorMessage from "./ErrorMessage";
@@ -13,8 +13,9 @@ right:6%;
 
 const Dashboard = (props) => {
   const { path, url } = useRouteMatch();
-  const {pathname} = useLocation()
   const {push} = useHistory()
+
+
 
   return (
     <DashWrapper>

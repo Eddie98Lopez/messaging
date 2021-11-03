@@ -11,7 +11,6 @@ export const deleteMessage = (dispatch, id) => {
     .then((res) => {
       const action = { type: delMsgAction, payload: id };
       dispatch(action)
-      dispatch({type:'RESET_CURRENT'});
     })
     .catch((err) => {
       const action = {

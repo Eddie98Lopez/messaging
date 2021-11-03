@@ -1,21 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { deleteIcon, reply, backIcon } from "../design-assets";
 import { Icon, DetailsWrapper,Button,DetailButtons } from "./styled-components";
 import { useStore, deleteMessage} from "../utils";
 import { useHistory, useParams } from "react-router";
 
 const Details = (props) => {
-  const { message } = props;
-  const {folder} = useParams()
-  const { title, body, sender, receiver, id,sent } = message;
+ 
+ 
+ const {folder} = useParams()
+  const {store,dispatch} = useStore();
+  const { title, body, sender, receiver, id,sent } = store.current;
   const date = new Date(sent)
-  const {dispatch} = useStore();
   const { push } = useHistory();
+
 
   const deleteAndGoBack = () => {
     deleteMessage(dispatch,id)
     push(`/dash/${folder}`);
   };
+
+  const replyMessage = () => {
+    dispatch({type:'REPLY',payload:{title,receiver:sender}})
+    push('/dash/compose')
+  }
+
+  useEffect(()=>{
+    dispatch({type:'READ_MESSAGE', payload: {folder: folder, message:{...store.current,read:true}}})
+  },[])
 
 
   return (
@@ -23,7 +34,7 @@ const Details = (props) => {
       <DetailButtons>
         <div><Button onClick={()=>dispatch({type:'RESET_CURRENT'})}><Icon  img={backIcon} alt="go back" /></Button></div>       
         <div>
-        <Button onClick={()=>push('/dash/compose')}><Icon img={reply} alt="reply"/></Button>
+        <Button onClick={replyMessage}><Icon img={reply} alt="reply"/></Button>
         <Button onClick={deleteAndGoBack}><Icon img={deleteIcon} alt="delete" /></Button>
         </div>
         

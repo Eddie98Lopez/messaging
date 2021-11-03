@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useHistory, useParams } from "react-router";
 import { Icon, Thumb } from "./styled-components";
 import { deleteIcon, reply } from "../design-assets";
@@ -10,13 +10,26 @@ const MessageThumb = (props) => {
   const { push } = useHistory();
   const { folder } = useParams();
   const {dispatch} = useStore()
+  const [seen, setSeen] = useState(read)
 
-  const handleClick= () => {
-  dispatch({type:'READ_MESSAGE', payload: {folder: folder, message:props.message}})
-  dispatch({type:setCurrAct,payload:props.message})}
+  const handleClick= (e) => {
+    e.stopPropagation()
+  dispatch({type:setCurrAct,payload:props.message})
+  setSeen(true)
+  /* axios.put(url,{...props.message,read:true}) */
+}
+
+
+const handleReply =(e)=>{
+  e.stopPropagation()
+  
+  dispatch({type:'REPLY', payload:{receiver:sender,title}})
+  push('/dash/compose')
+}
+  
 
   return (
-    <Thumb read={read} onClick={handleClick}>
+    <Thumb read={seen} onClick={handleClick}>
       <div className="messInfo" >
         <p>{folder === "sent" ? receiver : sender}</p>
         <h3>{title}</h3>
@@ -27,7 +40,7 @@ const MessageThumb = (props) => {
           img={reply}
           alt="reply"
           height={"1.25rem"}
-          onClick={() => push("/dash/compose")}
+          onClick={handleReply}
         />
 
         <Icon

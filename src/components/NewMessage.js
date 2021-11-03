@@ -17,6 +17,7 @@ import { useHistory } from "react-router-dom";
 
 const NewMessage = (props) => {
   const { push } = useHistory();
+  const {reply} = useStore().store
   const initialDraft = {
     title: "",
     receiver: "",
@@ -62,6 +63,10 @@ const NewMessage = (props) => {
     fetchData();
 
   };
+  useEffect(()=>{
+  reply !== null && setDraft({...draft,...reply, title: `RE: ${reply.title}`})
+  
+  },[])
 
   useEffect(() => {
     messageSchema.isValid(draft).then((res) => setDisabled(!res));
