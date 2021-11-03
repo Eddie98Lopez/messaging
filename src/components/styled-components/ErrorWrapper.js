@@ -6,7 +6,7 @@ z-index:5;
 width:100%;
 height:100vh;
 background: rgba(150, 150, 150,.5);
-display: ${props => props.display === true ? 'flex' : 'none'};
+display: ${props => props.display === 'true' ? 'flex' : 'none'};
 justify-content:center;
 align-items:center;
 

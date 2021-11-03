@@ -12,7 +12,7 @@ const ErrorMessage = (props) => {
   };
 
   return (
-    <ErrorWrapper display={errors}>
+    <ErrorWrapper display={errors.toString()}>
       <div>
         <h3>{err_message}</h3>
         <Button 
