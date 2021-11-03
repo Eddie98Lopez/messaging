@@ -5,7 +5,9 @@ import { useStore } from "../utils";
 
 const FolderRoute = (props) => {
   const { folder } = useParams();
+  console.log(useParams())
   const {folders} = useStore().store;
+  console.log(folders)
 
   return (
     <div>

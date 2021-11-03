@@ -9,6 +9,7 @@ export const StoreContext = createContext();
 //Below is a custom provider component
 export const StoreProvider = (props) => {
   const initialState = {
+    current:null,
     folders: {
       inbox: [],
       sent: [],

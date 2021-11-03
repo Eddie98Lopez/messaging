@@ -3,7 +3,7 @@ import { Switch, Route, useRouteMatch, useHistory, useLocation } from "react-rou
 import { Navigation, FolderRoute, NewMessage, DetailsRoute } from ".";
 import { StoreProvider } from "../utils";
 import ErrorMessage from "./ErrorMessage";
-import { Button, DashWrapper } from "./styled-components";
+import { Button, DashWrapper,MainWrapper } from "./styled-components";
 
 const fixedButton = `
 width: 150px;
@@ -22,28 +22,25 @@ const Dashboard = (props) => {
       <ErrorMessage/>
       <Navigation url={url} />
       
-      {pathname !== '/dash/compose' && (
-        <Button 
-        fixed={fixedButton}
-        onClick={()=>push('/dash/compose')}
-        className='compose'> Compose </Button>
-      )}
-
-      <Switch>
-
-          <Route exact path={`${path}/compose`}>
+        <Switch>
+  
+    <Route path={`${path}/compose`}>
             <NewMessage/>
           </Route>
+   
 
-          <Route exact path={`${path}/:folder`}>
-            <FolderRoute />
-          </Route>
+ 
+ <Route exact path={`${path}/:folder`}>
 
-          <Route path={`${path}/:folder/:id`}>
-            <DetailsRoute />
-          </Route>
-        
-      </Switch>
+<MainWrapper><FolderRoute />
+<DetailsRoute/>
+</MainWrapper>
+</Route>
+ 
+
+        </Switch>
+
+
       </StoreProvider>
     </DashWrapper>
   );

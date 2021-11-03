@@ -15,9 +15,19 @@ justify-content:space-between;
 align-items:left;
 z-index:3;
 
+& .navWords{
+    @media only screen and (max-width:768px){
+        display:none;
+    }
+    @media only screen and (max-width:600px){
+        display:inline;
+    }
+}
+
 & .logo{
     display:flex;
     justify-content: center;
+    width: 100%;
     align-items:center;
     margin-bottom: 2rem;
 
@@ -92,6 +102,11 @@ const NavLinks = styled.div`
         color:white;
         font-family: loos-normal, sans-serif;
         cursor:pointer;
+
+        @media only screen and (max-width:768px){
+           padding:1.2rem;
+           margin:0 auto;
+        }
         
         }
 

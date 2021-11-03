@@ -3,12 +3,13 @@ import styled from 'styled-components'
 
 const LogoWrapper = styled.div`
 user-select: none;
-height: ${props => props.height ? props.height : 'inherit'};
-width: auto;
+height: auto;
+width: 50%;
+margin:auto;
 
 & svg{
-  height: inherit;
-  width:auto;
+  height: auto;
+  width: 100%;;
   fill: black;
 
 }`

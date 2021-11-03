@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Thumb = styled.div`
   height: 4.5rem;
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
   border-bottom: .1px solid grey;
   display: flex;
