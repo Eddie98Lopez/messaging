@@ -8,20 +8,17 @@ const Details = (props) => {
   const { folder, message } = props;
   const { title, body, sender, receiver, id,sent } = message;
   const date = new Date(sent)
-  const [messages, setMessages] = useStore();
+  const {dispatch} = useStore();
   const { push, goBack } = useHistory();
 
-
-
   const deleteAndGoBack = () => {
-    deleteMessage([messages, setMessages], id);
+    deleteMessage(dispatch,id)
     push(`/dash/${folder}`);
   };
 
-  useEffect(()=>{
-    setMessages({...messages,
-    [folder]:[...messages[`${folder}`].filter(item => item.id!=id),{...message, read:true}]})
-  },[])
+ useEffect(()=>{
+     dispatch({type:'READ_MESSAGE', payload: {folder: folder, message:message}})
+   },[])
 
   return (
     <div>

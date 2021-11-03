@@ -29,7 +29,8 @@ const NewMessage = (props) => {
   const [errors, setErrors] = useState(initialErrors);
   const [disabled, setDisabled] = useState(true);
   const [sendErr,setSendErr] = useState('')
-  const [, setMessages] = useStore();
+  const {store, dispatch} = useStore();
+
 
   const change = (e) => {
     const { name, value } = e.target;
@@ -45,9 +46,10 @@ const NewMessage = (props) => {
     const fetchData = async () => {
       try {
         const newMessage = await axiosWithAuth().post(`${baseUrl}messages/`,draft);
+        const newFolders = await fetchMessages()
         newMessage.data.data = "success"
-          ? fetchMessages(setMessages)
-          : console.log("something went wrong");
+          ? dispatch({type:'GET_MESSAGES', payload:newFolders})
+          : dispatch({type:'SERVER_ERROR'})
       } 
       catch {
         setSendErr('Your message did dont send. Please try again.');
@@ -63,7 +65,7 @@ const NewMessage = (props) => {
 
   return (
     <div>
-      <Form onSubmit={submit}>
+      <Form onSubmit={submit} >
         <div>
           <Input
             name="title"

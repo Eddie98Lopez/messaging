@@ -1,0 +1,6 @@
+export const deleteMessage = 'DELETE_MESSAGE'
+export const reply = 'REPLY'
+export const readMessage = 'READ_MESSAGE'
+export const getMessages = 'GET_MESSAGES'
+export const newError = 'NEW_ERROR'
+export const closeError = 'CLOSE_ERROR'

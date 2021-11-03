@@ -1,13 +1,13 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import Details from "./Details";
-import { MessagesContext } from "../utils";
+import { useStore } from "../utils";
 
 const DetailsRoute = (props) => {
   const { folder, id } = useParams();
 
-  const [messages, ] = useContext(MessagesContext);
-  const details = messages[`${folder}`].filter((item) => item.id == id)[0];
+  const {folders} = useStore().store;
+  const details = folders[`${folder}`].filter((item) => item.id == id)[0];
 
   return (
     <div>
