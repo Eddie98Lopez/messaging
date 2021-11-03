@@ -6,6 +6,7 @@ import { DetailsWrapper, DetailButtons } from "./DetailsWrapper";
 import Thumb from "./Thumb";
 import { Form, Input, TextArea } from "./Forms";
 import { DashWrapper, MainWrapper } from "./DashWrapper";
+import { HomeWrapper } from "./HomeWrapper";
 
 
 export {
@@ -21,5 +22,6 @@ export {
   DetailsWrapper,
   DetailButtons,
   ErrorWrapper,
-  MainWrapper
+  MainWrapper,
+  HomeWrapper
 };
