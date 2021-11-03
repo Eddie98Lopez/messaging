@@ -1,67 +1,11 @@
 import React from "react";
-import styled from "styled-components";
 import LoginForm from "./LoginForm";
 import { Logo } from "../design-assets";
-
-const Wrapper = styled.div`
-  display: grid;
-  height: 100vh;
-  grid-template-columns: 65% 35%;
-
-  & .left {
-    background: #f6f1e3;
-    grid-template-area: a;
-    overflow: hidden;
-
-    & div {
-      position: relative;
-      top: 80%;
-      left: 5%;
-    }
-  }
-
-  & .right {
-      height:100%;
-      padding: 4rem 0px 2rem 0px;
-      display:flex;
-      flex-direction:column;
-      justify-content: space-between;
-        & .logo{
-            align-self: center;
-            display:none;
-        }
-      
-     
-  }
-
-  @media only screen and (max-width: 768px) {
-    grid-template-columns: 30% 70%;
-    & .left {
-      & div {
-        top: 90%;
-        height: 3rem;
-      }
-    }
-  }
-
-  @media only screen and (max-width: 600px) {
-    grid-template-columns: 100%;
-
-    & .left {
-      display: none;
-    }
-
-    & .right{
-        & .logo{
-            display:block;
-        }
-    }
-  }
-`;
+import { LoginWrapper } from "./styled-components";
 
 const LoginRoute = (props) => {
   return (
-    <Wrapper>
+    <LoginWrapper>
       <div className="left">
         <Logo fill={"rgba(229,126,49,.2)"} />
       </div>
@@ -69,9 +13,9 @@ const LoginRoute = (props) => {
       <div className="right">
         <LoginForm />
 
-        <Logo className='logo' height='2.5rem' fill={'rgb(229,126,49)'}/>
+        <Logo className="logo" height="2.5rem" fill={"rgb(229,126,49)"} />
       </div>
-    </Wrapper>
+    </LoginWrapper>
   );
 };
 

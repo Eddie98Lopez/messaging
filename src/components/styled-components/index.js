@@ -8,7 +8,8 @@ import { Form, Input, TextArea } from "./Forms";
 import { DashWrapper, MainWrapper } from "./DashWrapper";
 import { HomeWrapper } from "./HomeWrapper";
 import { AppContainer } from "./AppContainer";
-
+import {LoginWrapper} from './LoginWrapper'
+ 
 
 export {
   Icon,
@@ -25,5 +26,6 @@ export {
   ErrorWrapper,
   MainWrapper,
   HomeWrapper,
-  AppContainer
+  AppContainer,
+  LoginWrapper
 };
