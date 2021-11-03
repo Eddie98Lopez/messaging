@@ -6,13 +6,12 @@ const Nav = styled.nav`
 width: 100%;
 height: 100%;
 padding: 2rem 0;
-align-items: left;
 background: #E57E31;
 color:white;
 display:flex;
 flex-direction:column;
 justify-content:space-between;
-align-items:left;
+align-items:auto;
 z-index:3;
 
 & .navWords{
@@ -31,11 +30,25 @@ z-index:3;
     align-items:center;
     margin-bottom: 2rem;
 
+    & .logoSvg{
+        display:flex;
+        width:70%;
+    }
+
     @media only screen and (max-width:600px){
         padding:1rem;
         height:3.5rem;
         margin-bottom: 0;
         justify-content: space-between;
+        
+
+        & .logoSvg{
+            position:relative;
+            top:-4px;
+            left:-35%;
+        
+            width:100px;
+        }
 
     }
 
@@ -71,6 +84,8 @@ z-index:3;
 const NavLinks = styled.div`
 
     box-sizing:border-box;
+    width:100%;
+    margin:auto;
     height:95%;
     display:flex;
     flex-direction:column;
@@ -94,7 +109,7 @@ const NavLinks = styled.div`
     & .link{
         height:3rem;
         width:100%;
-        padding:.75rem 3rem;
+        padding:1rem;
         display:flex;
         justify-content: space-between;
         align-items:center;
@@ -111,9 +126,9 @@ const NavLinks = styled.div`
         }
 
     & .logout{
-        justify-content: flex-start;
+        justify-content: center;
         & span{
-            margin-left: .5rem;
+            margin-left: 1rem;
 
         }
     }
@@ -125,7 +140,15 @@ const NavLinks = styled.div`
     }
 
 
+    @media only screen and (max-width:768px){
+        align-items:center;
+    }
+
+
     @media only screen and (max-width:600px){
+        & .link{
+            align-items:left;
+        }
         display:${props => props.mobile !== true ? 'none' : 'flex'};
         background: lightgrey;
         padding:.5rem 0;

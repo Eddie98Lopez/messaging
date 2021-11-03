@@ -42,8 +42,7 @@ const LoginForm = (props) => {
                 console.log(res)
                 const token = res.data.token
                 localStorage.setItem('token',token)
-                console.log(localStorage)
-                push('/dash/inbox')
+                push('/dash/folder/inbox')
 
             })
             .catch(err => {

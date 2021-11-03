@@ -14,8 +14,6 @@ const Details = (props) => {
   const { title, body, sender, receiver,sent } = props.message;
   const date = new Date(sent)
 
-
-
   const deleteAndGoBack = () => {
     deleteMessage(dispatch,id)
     push(`/dash/folder/${folder}`);
@@ -26,12 +24,6 @@ const Details = (props) => {
     dispatch({type:'REPLY',payload:{title,receiver:sender}})
     push('/dash/compose')
   } 
-  
-
-
-
-  
-
 
   return (
     <div>

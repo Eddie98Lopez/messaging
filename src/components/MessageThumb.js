@@ -3,7 +3,6 @@ import { useHistory, useParams } from "react-router";
 import { Icon, Thumb } from "./styled-components";
 import { deleteIcon, reply } from "../design-assets";
 import { deleteMessage, useStore} from "../utils";
-import { setCurrAct } from "../utils/context/actions";
 
 const MessageThumb = (props) => {
   const { title, sender, id, receiver,read } = props.message;
@@ -13,9 +12,12 @@ const MessageThumb = (props) => {
 
   const handleClick= (e) => {
     e.stopPropagation()
-    dispatch({type:setCurrAct,payload:props.message})
     push(`/dash/folder/${folder}/${id}`)}
   
+  const toCompose = e => {
+    e.stopPropagation()
+    push('/dash/compose')
+  }
 
   return (
     <Thumb read={read.toString()} onClick={handleClick}>
@@ -29,7 +31,7 @@ const MessageThumb = (props) => {
           img={reply}
           alt="reply"
           height={"1.25rem"}
-          onClick={() => push("/dash/compose")}
+          onClick={toCompose}
         />
 
         <Icon

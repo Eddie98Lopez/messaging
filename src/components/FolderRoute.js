@@ -12,11 +12,11 @@ const FolderRoute = (props) => {
 
   return (
     <MainWrapper>
-      <div>
-        {
-          folders[`${folder}`].map(item => <MessageThumb message={item}/>)
+      <div >
+        {folders[`${folder}`].length === 0
+        ? `${folder} is empty`
+        :folders[`${folder}`].map(item => <MessageThumb key={item.id} message={item}/>)
         }
-
       </div>
 
         
