@@ -11,12 +11,14 @@ const MessageThumb = (props) => {
   const { folder } = useParams();
   const {dispatch} = useStore()
 
-  const handleClick= () => {
-  dispatch({type:'READ_MESSAGE', payload: {folder: folder, message:props.message}})
-  dispatch({type:setCurrAct,payload:props.message})}
+  const handleClick= (e) => {
+    e.stopPropagation()
+    dispatch({type:setCurrAct,payload:props.message})
+    push(`/dash/folder/${folder}/${id}`)}
+  
 
   return (
-    <Thumb read={read} onClick={handleClick}>
+    <Thumb read={read.toString()} onClick={handleClick}>
       <div className="messInfo" >
         <p>{folder === "sent" ? receiver : sender}</p>
         <h3>{title}</h3>
@@ -36,7 +38,7 @@ const MessageThumb = (props) => {
           height={"1.25rem"}
           onClick={()=>deleteMessage(dispatch,id)}
         />
-      </div>
+      </div> 
     </Thumb>
   );
 };

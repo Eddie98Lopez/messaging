@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Details from "./Details";
 import { useStore } from "../utils";
+import {useParams} from 'react-router-dom'
 import styled from 'styled-components'
 
 const styles = `
@@ -20,16 +21,29 @@ const Wrapper  = styled.div`
 }`
 
 const DetailsRoute = (props) => {
+  const {folder,id} = useParams()
+  console.log( folder,id)
+  const {dispatch}= useStore()
+  const {folders,current} = useStore().store
 
-  const {current} = useStore().store;
+
+
+  
+
+  useEffect(()=>{
+    const details = folders[`${folder}`].filter(item => item.id == id)[0]
+    dispatch({type:'SET_CURRENT', payload:details})
+    console.log(current)
+  },[])
+  
+
+  //const {current} = useStore().store;
 
   return (
-    <Wrapper current={current}>
-      {current === null ? (
-        "Loading..."
-      ) : (
-        <Details message={{...current}} />
-      )}
+    <Wrapper >
+      {current === null || current===undefined ? 'Select One' : <Details message={current}/>}
+
+    
     </Wrapper>
   );
 };

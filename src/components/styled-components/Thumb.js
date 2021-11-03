@@ -8,7 +8,7 @@ const Thumb = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: ${props => props.read === false ? '#F6F1E3' : 'white'};
+  background: ${props => props.read === 'false' ? '#F6F1E3' : 'white'};
   padding: 0 2rem;
   transition: .4s ease-in-out;
 

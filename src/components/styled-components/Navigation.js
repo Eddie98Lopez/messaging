@@ -122,7 +122,6 @@ const NavLinks = styled.div`
         background: white;
         color: #E57E31;
         transition: .25s ease-in-out;
-
     }
 
 

@@ -23,9 +23,9 @@ const Navigation = (props) => {
     const [display,setDisplay]=useState(false)
 
     //in mobile view the "useEffect" below closes the mobile menu when the route changes
-    useEffect(()=>{
+/*     useEffect(()=>{
         setDisplay(false)
-    },[location])
+    },[location]) */
 
     const logout = e => {
         localStorage.removeItem('token')
@@ -57,13 +57,13 @@ const Navigation = (props) => {
 
                     <div className='divider navWords disappear'></div>
 
-                    <NavLink activeClassName='active' className = 'link' to = {`${url}/inbox`}>
+                    <NavLink activeClassName='active' className = 'link' to = {`${url}/folder/inbox`}>
                         <Icon img={inbox} alt='inbox-icon'/>
                         <span className='navWords'>Inbox</span>
                         <span className='navWords'>{unRead('inbox')}</span>
                     </NavLink>
 
-                    <NavLink activeClassName='active' className = 'link' to = {`${url}/sent`}>
+                    <NavLink activeClassName='active' className = 'link' to = {`${url}/folder/sent`}>
                         <Icon img={sent} alt='sent-icon'/>
                         <span className='navWords'>Sent</span>
                         <span className='navWords'>{unRead('sent')}</span>

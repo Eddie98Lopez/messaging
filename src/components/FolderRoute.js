@@ -1,23 +1,31 @@
 import React from "react";
+import { DetailsRoute } from ".";
+import { MainWrapper } from "./styled-components";
 import MessageThumb from "./MessageThumb";
-import { useParams } from "react-router-dom";
+import { useParams, Switch, Route } from "react-router-dom";
 import { useStore } from "../utils";
 
 const FolderRoute = (props) => {
   const { folder } = useParams();
-  console.log(useParams())
   const {folders} = useStore().store;
-  console.log(folders)
+
 
   return (
-    <div>
-      {folder !== "compose" &&
-        (folders[`${folder}`].length === 0
-          ? `${folder} is empty`
-          : folders[`${folder}`].map((message) => (
-              <MessageThumb key={message.id} message={message} />
-            )))}
-    </div>
+    <MainWrapper>
+      <div>
+        {
+          folders[`${folder}`].map(item => <MessageThumb message={item}/>)
+        }
+
+      </div>
+
+        
+<Switch>
+  <Route exact path={`/dash/folder/:folder/:id`}>
+    <DetailsRoute/>
+  </Route>
+</Switch>
+    </MainWrapper>
   );
 };
 
