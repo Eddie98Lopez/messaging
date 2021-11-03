@@ -16,6 +16,7 @@ const MessageThumb = (props) => {
   
   const toCompose = e => {
     e.stopPropagation()
+    dispatch({type:'REPLY', payload:{...props.message}})
     push('/dash/compose')
   }
 

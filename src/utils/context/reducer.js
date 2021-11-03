@@ -28,11 +28,12 @@ export const storeReducer = (state,action) => {
             }}
         case 'REPLY':
             return {...state,
-            reply:{...state.reply,
-                receiver: action.payload.receiver,
-                title: action.payload.title
+            reply:{...action.payload
             }
         }
+        case 'RESET_REPLY':
+            return{...state,reply:null}
+            
         case 'NEW_ERROR':
             return {...state,
             errors: true,

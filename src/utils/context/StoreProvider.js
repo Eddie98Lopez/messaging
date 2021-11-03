@@ -14,10 +14,7 @@ export const StoreProvider = (props) => {
       inbox: [],
       sent: [],
     },
-    reply: {
-      receiver: "",
-      title: "",
-    },
+    reply:null,
     errors: false,
     err_message: ''
   };

@@ -95,6 +95,9 @@ const NavLinks = styled.div`
     & .top{
         display:inherit;
         flex-direction: inherit;
+        & button{
+            margin-bottom: 10px;
+        }
     }
 
     & .divider{
@@ -121,6 +124,9 @@ const NavLinks = styled.div`
         @media only screen and (max-width:768px){
            padding:1.2rem;
            margin:0 auto;
+
+
+
         }
         
         }
