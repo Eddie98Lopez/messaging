@@ -10,7 +10,8 @@ export const deleteMessage = (dispatch, id) => {
     .delete(`https://messaging-test.bixly.com/messages/${id}`)
     .then((res) => {
       const action = { type: delMsgAction, payload: id };
-      dispatch(action);
+      dispatch(action)
+      dispatch({type:'RESET_CURRENT'});
     })
     .catch((err) => {
       const action = {

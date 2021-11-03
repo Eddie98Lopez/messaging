@@ -38,7 +38,7 @@ const Navigation = (props) => {
 
             <div className='logo'>
 
-                <Logo height={'3rem'} fill='white'/>
+                <Logo  fill='white'/>
 
                 <div className='hamburger svg' onClick={()=> setDisplay(!display)}>
                     <Icon img={hamburger} alt='hamburger' />
@@ -50,30 +50,30 @@ const Navigation = (props) => {
                 <div className='top'>
                     <Button className='disappear' onClick={()=>push(`${url}/compose`)} width='80%'>
                         <Icon img={compose} alt='new-message-icon'/>
-                        <span>Compose</span>
+                        <span className='navWords'>Compose</span>
                         
                         
                     </Button>
 
-                    <div className='divider disappear'></div>
+                    <div className='divider navWords disappear'></div>
 
                     <NavLink activeClassName='active' className = 'link' to = {`${url}/inbox`}>
                         <Icon img={inbox} alt='inbox-icon'/>
-                        <span>Inbox</span>
-                        <span>{unRead('inbox')}</span>
+                        <span className='navWords'>Inbox</span>
+                        <span className='navWords'>{unRead('inbox')}</span>
                     </NavLink>
 
                     <NavLink activeClassName='active' className = 'link' to = {`${url}/sent`}>
                         <Icon img={sent} alt='sent-icon'/>
-                        <span>Sent</span>
-                        <span>{unRead('sent')}</span>
+                        <span className='navWords'>Sent</span>
+                        <span className='navWords'>{unRead('sent')}</span>
                     </NavLink>
                 </div>
 
 
                 <div onClick={logout} className='link logout'>
                     <Icon img={logoutIcon} alt='logout'/>
-                    <span>Logout</span>
+                    <span className='navWords'>Logout</span>
                 </div>
 
             </NavLinks>

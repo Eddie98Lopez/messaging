@@ -5,7 +5,7 @@ import { Nav, NavLinks } from "./Navigation";
 import { DetailsWrapper, DetailButtons } from "./DetailsWrapper";
 import Thumb from "./Thumb";
 import { Form, Input, TextArea } from "./Forms";
-import { DashWrapper } from "./DashWrapper";
+import { DashWrapper, MainWrapper } from "./DashWrapper";
 
 
 export {
@@ -20,5 +20,6 @@ export {
   DashWrapper,
   DetailsWrapper,
   DetailButtons,
-  ErrorWrapper
+  ErrorWrapper,
+  MainWrapper
 };

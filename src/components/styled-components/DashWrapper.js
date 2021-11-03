@@ -7,10 +7,15 @@ export const DashWrapper = styled.div`
   grid-template-columns: 1fr 4fr;
   grid-template-rows: 100%;
 
+
+
   & .compose{
     display:none;
 
   }
+  @media only screen and (max-width:768px){
+  grid-template-columns: 70px auto;
+}
   @media only screen and (max-width: 600px) {
     display: block;
 
@@ -21,4 +26,22 @@ export const DashWrapper = styled.div`
   }
 
 
+`
+
+export const MainWrapper = styled.div`
+
+
+  display:grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 100%;
+  box-sizing:border-box;
+
+  @media only screen and (max-width:846px){
+    grid-template-columns: 40% 2fr;
+
+  }
+  @media only screen and (max-width:600px){
+    grid-template-columns: 100%;
+
+  }
 `
