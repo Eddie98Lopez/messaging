@@ -29,11 +29,13 @@ export const storeReducer = (state,action) => {
         }
         case 'NEW_ERROR':
             return {...state,
-            errors: true}
+            errors: true,
+            err_message:action.payload}
 
         case 'CLOSE_ERROR':
             return{ ...state,
-            errors: false
+            errors: false,
+            err_message: ''
             }
         default:
             return {...state}

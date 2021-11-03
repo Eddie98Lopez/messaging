@@ -29,7 +29,7 @@ const NewMessage = (props) => {
   const [errors, setErrors] = useState(initialErrors);
   const [disabled, setDisabled] = useState(true);
   const [sendErr,setSendErr] = useState('')
-  const {store, dispatch} = useStore();
+  const { store, dispatch} = useStore();
 
 
   const change = (e) => {
@@ -47,16 +47,16 @@ const NewMessage = (props) => {
       try {
         const newMessage = await axiosWithAuth().post(`${baseUrl}messages/`,draft);
         const newFolders = await fetchMessages()
-        newMessage.data.data = "success"
-          ? dispatch({type:'GET_MESSAGES', payload:newFolders})
-          : dispatch({type:'SERVER_ERROR'})
-      } 
+
+        newMessage.data.data = "success" && dispatch({type:'GET_MESSAGES', payload:newFolders})
+        push("/dash/inbox");} 
       catch {
-        setSendErr('Your message did dont send. Please try again.');
+        dispatch({type:'NEW_ERROR', payload: 'Your message did dont send. Please verify the recipient is correct and try again.'})
+        console.log(store)
       }
     };
     fetchData();
-    push("/dash/inbox");
+
   };
 
   useEffect(() => {

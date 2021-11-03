@@ -18,6 +18,7 @@ export const StoreProvider = (props) => {
       title: "",
     },
     errors: false,
+    err_message: ''
   };
 
   const [store, setStore] = useState(initialState);

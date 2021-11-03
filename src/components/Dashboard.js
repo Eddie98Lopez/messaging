@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route, useRouteMatch, useHistory, useLocation } from "react-router-dom";
 import { Navigation, FolderRoute, NewMessage, DetailsRoute } from ".";
 import { StoreProvider } from "../utils";
+import ErrorMessage from "./ErrorMessage";
 import { Button, DashWrapper } from "./styled-components";
 
 const fixedButton = `
@@ -18,6 +19,7 @@ const Dashboard = (props) => {
   return (
     <DashWrapper>
       <StoreProvider>
+      <ErrorMessage/>
       <Navigation url={url} />
       
       {pathname !== '/dash/compose' && (
