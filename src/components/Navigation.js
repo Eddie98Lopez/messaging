@@ -4,9 +4,6 @@ import { NavLinks, Nav, Icon, Button } from './styled-components'
 import {hamburger,inbox,logoutIcon,compose,sent, Logo} from '../design-assets'
 import { useStore } from '../utils'
 
-
-
-
 const Navigation = (props) => {
     const {url} = props
     const {push} = useHistory()
@@ -23,9 +20,9 @@ const Navigation = (props) => {
     const [display,setDisplay]=useState(false)
 
     //in mobile view the "useEffect" below closes the mobile menu when the route changes
-    useEffect(()=>{
+     useEffect(()=>{
         setDisplay(false)
-    },[location])
+    },[location]) 
 
     const logout = e => {
         localStorage.removeItem('token')
@@ -38,7 +35,7 @@ const Navigation = (props) => {
 
             <div className='logo'>
 
-                <Logo  fill='white'/>
+                <Logo  fill='white' className='logoSvg'/>
 
                 <div className='hamburger svg' onClick={()=> setDisplay(!display)}>
                     <Icon img={hamburger} alt='hamburger' />
@@ -51,19 +48,18 @@ const Navigation = (props) => {
                     <Button className='disappear' onClick={()=>push(`${url}/compose`)} width='80%'>
                         <Icon img={compose} alt='new-message-icon'/>
                         <span className='navWords'>Compose</span>
-                        
-                        
+                                  
                     </Button>
 
                     <div className='divider navWords disappear'></div>
 
-                    <NavLink activeClassName='active' className = 'link' to = {`${url}/inbox`}>
+                    <NavLink activeClassName='active' className = 'link' to = {`${url}/folder/inbox`}>
                         <Icon img={inbox} alt='inbox-icon'/>
                         <span className='navWords'>Inbox</span>
                         <span className='navWords'>{unRead('inbox')}</span>
                     </NavLink>
 
-                    <NavLink activeClassName='active' className = 'link' to = {`${url}/sent`}>
+                    <NavLink activeClassName='active' className = 'link' to = {`${url}/folder/sent`}>
                         <Icon img={sent} alt='sent-icon'/>
                         <span className='navWords'>Sent</span>
                         <span className='navWords'>{unRead('sent')}</span>

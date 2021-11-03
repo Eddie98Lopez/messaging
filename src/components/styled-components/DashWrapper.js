@@ -30,6 +30,12 @@ export const DashWrapper = styled.div`
 
 export const MainWrapper = styled.div`
 
+& .folders{
+  background: rgba(255, 251, 194,.3);
+
+
+}
+
 
   display:grid;
   grid-template-columns: 1fr 2fr;

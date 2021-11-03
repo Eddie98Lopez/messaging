@@ -2,9 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 const LogoWrapper = styled.div`
+
 user-select: none;
 height: auto;
-width: 50%;
+width: ${props=> props.width ? props.width: '50%'};
 margin:auto;
 
 & svg{
@@ -17,7 +18,7 @@ margin:auto;
 const Logo = (props) =>{
 
   return( 
-    <LogoWrapper height={props.height} className={props.className}>
+    <LogoWrapper height={props.height} className={props.className} width={props.width}>
           <svg xmlns="http://www.w3.org/2000/svg" width="336.597" height="117.538" viewBox="0 0 336.597 117.538">
   <g id="Group_5" data-name="Group 5" transform="translate(-896.62 -490.25)">
     <g id="Group_3" data-name="Group 3" transform="translate(896.62 490.25)">
