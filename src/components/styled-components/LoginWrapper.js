@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const LoginWrapper = styled.div`
   display: grid;
   height: 100vh;
   grid-template-columns: 65% 35%;

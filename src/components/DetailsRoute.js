@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import Details from "./Details";
 import { useStore } from "../utils";
 import {useParams} from 'react-router-dom'
@@ -7,7 +7,6 @@ const Wrapper = styled.div`
 @media only screen and (max-width:600px){
   position:absolute;
   box-sizing:border-box;
-
   width:100%;
   height:100%;
   background:white;
