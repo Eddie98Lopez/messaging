@@ -11,10 +11,10 @@ const Navigation = (props) => {
     const {url} = props
     const {push} = useHistory()
     const location = useLocation()
-    const [messages] = useStore()
+    const {folders} = useStore().store
 
     const unRead = (folder) =>{
-        const unread = messages[`${folder}`].filter(item => item.read === false)
+        const unread = folders[`${folder}`].filter(item => item.read === false)
         const valueToUse = unread.length !== 0 ? unread.length : ''
         return valueToUse
     }

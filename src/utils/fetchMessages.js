@@ -5,16 +5,17 @@ import { axiosWithAuth } from "./axiosWithAuth";
 
 
 
-export const fetchMessages = async (setFunction) => {
+export const fetchMessages = async () => {
         
         try {
           const inbox = await axiosWithAuth().get("https://messaging-test.bixly.com/messages");
           const sent = await axiosWithAuth().get("https://messaging-test.bixly.com/messages/sent");
   
-          setFunction({
+          return {
             inbox: inbox.data,
             sent: sent.data,
-          });
+          }
+
         } 
         catch {
           console.log("something went wrong");

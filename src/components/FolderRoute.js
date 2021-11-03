@@ -5,14 +5,14 @@ import { useStore } from "../utils";
 
 const FolderRoute = (props) => {
   const { folder } = useParams();
-  const [messages] = useStore();
+  const {folders} = useStore().store;
 
   return (
     <div>
       {folder !== "compose" &&
-        (messages[`${folder}`].length === 0
+        (folders[`${folder}`].length === 0
           ? `${folder} is empty`
-          : messages[`${folder}`].map((message) => (
+          : folders[`${folder}`].map((message) => (
               <MessageThumb key={message.id} message={message} />
             )))}
     </div>

@@ -1,19 +1,22 @@
 import { axiosWithAuth } from "./axiosWithAuth";
-import loginSchema from "./schemas/loginSchema";
-import { MessagesContext, MessagesProvider, useStore } from "./context/MessageListContext";
-import messageSchema from "./schemas/messageSchema";
 import { baseUrl } from "./baseUrl";
+
+import loginSchema from "./schemas/loginSchema";
+import messageSchema from "./schemas/messageSchema";
+
+import { StoreProvider } from "./context/StoreProvider";
+import { useStore } from "./context/useStore";
+
 import { fetchMessages } from "./fetchMessages";
-import {deleteMessage} from './deleteMessage'
+import { deleteMessage } from "./deleteMessage";
 
 export {
   loginSchema,
   messageSchema,
   axiosWithAuth,
-  MessagesContext,
-  MessagesProvider,
+  StoreProvider,
   baseUrl,
   fetchMessages,
   deleteMessage,
-  useStore
+  useStore,
 };

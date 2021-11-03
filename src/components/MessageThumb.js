@@ -2,20 +2,18 @@ import React from "react";
 import { useHistory, useParams } from "react-router";
 import { Icon, Thumb } from "./styled-components";
 import { deleteIcon, reply } from "../design-assets";
-import { deleteMessage, useStore } from "../utils";
+import { deleteMessage, useStore} from "../utils";
 
 const MessageThumb = (props) => {
   const { title, sender, id, receiver,read } = props.message;
   const { push } = useHistory();
   const { folder } = useParams();
-
-  const [messages, setMessages] = useStore();
+  const {dispatch} = useStore()
 
   const detailLink = () => {
     push(`/dash/${folder}/${id}`);
   };
-
-
+  
 
   return (
     <Thumb read={read}>
@@ -36,7 +34,7 @@ const MessageThumb = (props) => {
           img={deleteIcon}
           alt="delete"
           height={"1.25rem"}
-          onClick={()=>deleteMessage([messages,setMessages],id)}
+          onClick={()=>deleteMessage(dispatch,id)}
         />
       </div>
     </Thumb>

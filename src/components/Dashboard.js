@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route, useRouteMatch, useHistory, useLocation } from "react-router-dom";
 import { Navigation, FolderRoute, NewMessage, DetailsRoute } from ".";
-import { MessagesProvider } from "../utils";
+import { StoreProvider } from "../utils";
 import { Button, DashWrapper } from "./styled-components";
 
 const fixedButton = `
@@ -17,7 +17,7 @@ const Dashboard = (props) => {
 
   return (
     <DashWrapper>
-      <MessagesProvider>
+      <StoreProvider>
       <Navigation url={url} />
       
       {pathname !== '/dash/compose' && (
@@ -42,7 +42,7 @@ const Dashboard = (props) => {
           </Route>
         
       </Switch>
-      </MessagesProvider>
+      </StoreProvider>
     </DashWrapper>
   );
 };
