@@ -17,7 +17,7 @@ const Details = (props) => {
   };
 
  useEffect(()=>{
-     dispatch({type:'READ_MESSAGE', payload: message})
+     dispatch({type:'READ_MESSAGE', payload: {folder: folder, message:message}})
    },[])
 
   return (
