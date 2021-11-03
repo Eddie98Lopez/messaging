@@ -44,6 +44,14 @@ const NewMessage = (props) => {
       .catch((err) => setErrors({ ...errors, [name]: err.errors[0] }));
   };
 
+  const discard = (e) => {
+    e.stopPropagation()
+    dispatch({type:"RESET_REPLY"})
+    //setDraft(initialDraft)
+    push('/dash/folder/inbox')
+
+  }
+
   const submit = (e) => {
     e.preventDefault();
     const fetchData = async () => {
@@ -62,6 +70,11 @@ const NewMessage = (props) => {
     fetchData();
 
   };
+
+  useEffect(()=>{
+    store.reply !== null && setDraft({...draft, ...store.reply, title:`RE: ${store.reply.title}`})
+
+  },[])
 
   useEffect(() => {
     messageSchema.isValid(draft).then((res) => setDisabled(!res));
@@ -103,7 +116,7 @@ const NewMessage = (props) => {
           <div className='errors'>{errors.body}</div>
         </div>
 
-
+        <Button onClick={discard}>Discard</Button>
         <Button disabled={disabled}>Send</Button>
       </Form>
     </div>
