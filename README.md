@@ -22,6 +22,10 @@ in source there is :
 2. Schemas
 3. {...all other helper functions}
 
+## App State Management
+I am using React's context api capabilities to manage app state. I created a context and a provider. The provider provides an object that holds the "state store" and a dispatch function. The dispatch function feeds an action object to a reducer function and updates state with what the reducer returns. The state store is then accessible by all child components with the custom hook "useStore" that is the same as the useContext(StoreContext) function.
+
+
 
     
 
