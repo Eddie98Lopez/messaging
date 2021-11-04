@@ -30,8 +30,9 @@ export const DashWrapper = styled.div`
 
 export const MainWrapper = styled.div`
 
-& .folders{
+& .folder{
   background: rgba(255, 251, 194,.3);
+  overflow-y:scroll;
 
 
 }

@@ -5,7 +5,7 @@ const MessageList = (props) => {
 const {folders,folder} = props
   
     return(
-        <div >
+        <div className='folder'>
         {folders[`${folder}`].length === 0
         ? `${folder} is empty`
         :folders[`${folder}`].map(item => <MessageItem key={item.id} message={item}/>)

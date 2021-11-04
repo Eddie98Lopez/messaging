@@ -17,7 +17,6 @@ import {
   readMsgAction,
   getMsgsAction,
   delMsgAction,
-  setCurrAct
 } from "../utils/context/actions";
 import { sendErrMsg, deleteErrMsg, getMsgsErr } from "../utils/error_messages";
 
@@ -39,5 +38,5 @@ export {
   deleteErrMsg,
   getMsgsErr,
   replyMessage,
-  setCurrAct
+
 };

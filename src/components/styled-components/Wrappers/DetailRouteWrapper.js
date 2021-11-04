@@ -8,6 +8,8 @@ export const DetailRouteWrapper = styled.div`
   height:100%;
   background:white;
   z-index:3;
+ 
+  
 }
 
 `

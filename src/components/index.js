@@ -1,4 +1,4 @@
-import Dashboard from "./route-components/Dashboard";
+import Dashboard from "./Dashboard";
 import HomeRoute from "./route-components/HomeRoute";
 import LoginRoute from "./route-components/LoginRoute";
 import Navigation from "./Navigation";
