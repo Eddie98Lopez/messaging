@@ -64,7 +64,7 @@ const NewMessage = (props) => {
 
       catch {
         dispatch({type:newErrAction, payload: sendErrMsg})
-        console.log(store)
+        
       }
     };
     fetchData();

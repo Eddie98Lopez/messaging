@@ -6,7 +6,6 @@ import { DetailRouteWrapper } from "../styled-components";
 
 const DetailsRoute = (props) => {
   const { folder, id } = useParams();
-  console.log(folder, id);
   const { folders } = useStore().store;
 
   const details = folders[`${folder}`].filter((item) => item.id == id)[0];

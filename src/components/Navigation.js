@@ -26,7 +26,6 @@ const Navigation = (props) => {
 
     const logout = e => {
         localStorage.removeItem('token')
-        console.log(localStorage)
         push('/')   
     }
 
