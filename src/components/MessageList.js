@@ -1,5 +1,6 @@
 import React from 'react'
 import MessageItem from "./MessageItem";
+import EmptyFolder from './EmptyFolder';
 
 const MessageList = (props) => {
 const {folders,folder} = props
@@ -7,7 +8,7 @@ const {folders,folder} = props
     return(
         <div className='folder'>
         {folders[`${folder}`].length === 0
-        ? `${folder} is empty`
+        ? <EmptyFolder folder={folder}/>
         :folders[`${folder}`].map(item => <MessageItem key={item.id} message={item}/>)
         }
       </div>
