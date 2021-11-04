@@ -9,9 +9,8 @@ const HomeRoute = (props) => {
         <HomeWrapper>
             <div className='logo'> 
                 <Logo fill='white'/>
-            </div>
-            <div>  
-                <Button onClick={()=>{push('/login')}}>
+ 
+                <Button onClick={()=>{push('/login')}} width='150px'>
                     Login
                 </Button>.
             </div>
