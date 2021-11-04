@@ -13,6 +13,7 @@ in source there is :
 ### 1. Components
 #### Route Components
 - This folder houses all the main top level components that parallel their app functionality
+    - boop
 #### Styled Components
 - This folder houses styled components and styled wrappers for components and their child components
 #### {... All other components}
