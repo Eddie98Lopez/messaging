@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect } from "react";
 import { storeReducer } from "./reducer";
 import { fetchMessages , getMsgsErr} from "..";
+import { useLocation } from "react-router";
 
 // MessageContext will act as a state store
 export const StoreContext = createContext();
@@ -8,6 +9,7 @@ export const StoreContext = createContext();
 
 //Below is a custom provider component
 export const StoreProvider = (props) => {
+  const location = useLocation()
   const initialState = {
     folders: {
       inbox: [],
@@ -19,6 +21,7 @@ export const StoreProvider = (props) => {
   };
 
   const [store, setStore] = useState(initialState);
+  
 
   const dispatch = (action) => {
     setStore(storeReducer(store, action));
@@ -36,6 +39,9 @@ export const StoreProvider = (props) => {
 
     fetchData();
   }, []);
+  useEffect(()=>{
+    dispatch({type:'RESET_REPLY'})
+  },[location])
 
   return (
     <StoreContext.Provider value={{ store, dispatch }}>

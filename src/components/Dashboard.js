@@ -1,9 +1,9 @@
 import React from "react";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
-import { Navigation, FolderRoute, NewMessage } from "..";
-import { StoreProvider } from "../../utils";
-import ErrorMessage from "../ErrorMessage";
-import { DashWrapper } from "../styled-components";
+import { Navigation, FolderRoute, NewMessage } from ".";
+import { StoreProvider } from "../utils";
+import ErrorMessage from "./ErrorMessage";
+import { DashWrapper } from "./styled-components";
 
 
 const Dashboard = (props) => {

@@ -6,6 +6,7 @@ justify-content:space-between;
 align-items:center;
 padding:1rem;
 
+
 & button{
     display:inline-block;
     box-shadow:none;
@@ -15,8 +16,10 @@ padding:1rem;
 `
 
 const DetailsWrapper = styled.div`
-  box-sizing: border-box;
+  
   padding: 3rem;
+  overflow-y:scroll;
+  max-height: 70vh;
 
   & h2 {
     font-size: 2rem;
@@ -43,6 +46,7 @@ const DetailsWrapper = styled.div`
     font-size: 1rem;
     font-family: sans-serif;
     color: grey;
+    overflow-y: scroll;
   }
 
   @media only screen and (max-width:600px){
