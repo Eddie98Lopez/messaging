@@ -1,15 +1,15 @@
 import { Icon } from "./Icon";
-import { ErrorWrapper } from "./ErrorWrapper";
+import { ErrorWrapper } from "./Wrappers/ErrorWrapper";
 import { Button } from "./Button";
 import { Nav, NavLinks } from "./Navigation";
-import { DetailsWrapper, DetailButtons } from "./DetailsWrapper";
+import { DetailsWrapper, DetailButtons } from "./Wrappers/DetailsWrapper";
 import Thumb from "./Thumb";
 import { Form, Input, TextArea } from "./Forms";
-import { DashWrapper, MainWrapper } from "./DashWrapper";
-import { HomeWrapper } from "./HomeWrapper";
-import { AppContainer } from "./AppContainer";
-import {LoginWrapper} from './LoginWrapper'
-import { DetailRouteWrapper } from "./DetailRouteWrapper";
+import { DashWrapper, MainWrapper } from "./Wrappers/DashWrapper";
+import { HomeWrapper } from "./Wrappers/HomeWrapper";
+import { AppContainer } from "./Wrappers/AppContainer";
+import {LoginWrapper} from './Wrappers/LoginWrapper'
+import { DetailRouteWrapper } from "./Wrappers/DetailRouteWrapper";
  
 
 export {
