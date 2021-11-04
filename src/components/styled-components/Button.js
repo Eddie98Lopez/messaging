@@ -19,6 +19,13 @@ export const Button = styled.button`
   font-size: 1.1rem;
   font-family: loos-normal;
   font-weight: 700;
+  transition: ease-in-out .25s;
+
+  &:hover {
+    transition: ease-in-out .25s;
+    box-shadow: 3px 3px 10px rgba(80,80,80, 0.85)
+
+  }
 
   &:disabled {
     cursor: auto;

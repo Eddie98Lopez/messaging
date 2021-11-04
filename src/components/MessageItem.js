@@ -33,14 +33,14 @@ const MessageItem = (props) => {
         <Icon
           img={reply}
           alt="reply"
-          height={"1.25rem"}
+          height={"inherit"}
           onClick={toReply}
         />
 
         <Icon
           img={deleteIcon}
           alt="delete"
-          height={"1.25rem"}
+          height={"inherit"}
           onClick={()=>deleteMessage(dispatch,id)}
         />
       </div> 

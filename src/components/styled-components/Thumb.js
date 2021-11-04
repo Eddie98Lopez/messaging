@@ -39,7 +39,7 @@ const Thumb = styled.div`
     width: 20%;
     height: 1.25rem;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
   }
 
   &:hover {
@@ -55,6 +55,9 @@ const Thumb = styled.div`
 
     & .buttons{
       opacity:1;
+      justify-content:space-between:
+      height:1.75rem;
+ 
     }
   }
 `;
