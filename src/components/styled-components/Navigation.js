@@ -14,12 +14,9 @@ export const Nav = styled.nav`
   align-items: auto;
   z-index: 3;
 
-  & .navWords {
-    @media only screen and (max-width: 768px) {
-      display: none;
-    }
-    @media only screen and (max-width: 600px) {
-      display: inline;
+  @media only screen and (max-width: 768px) {
+    & .navWords{
+        display:none;
     }
   }
 
@@ -29,6 +26,10 @@ export const Nav = styled.nav`
     overflow: hidden;
     top: 0;
     padding: 0;
+
+    & .navWords{
+        display:inline;
+    }
   }
 `;
 
@@ -63,28 +64,18 @@ export const NavLinks = styled.div`
   }
 
   & .link {
-    height: 3rem;
+    height: auto;
     width: 100%;
     padding: 1rem;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-around;
+    align-items:center;
     text-decoration: none;
     color: white;
     font-family: loos-normal, sans-serif;
     cursor: pointer;
 
-    @media only screen and (max-width: 768px) {
-      padding: 1.2rem;
-      margin: 0 auto;
-    }
-  }
 
-  & .logout {
-    justify-content: center;
-    & span {
-      margin-left: 1rem;
-    }
   }
   & .active {
     font-weight: 700;
@@ -93,18 +84,31 @@ export const NavLinks = styled.div`
     transition: 0.25s ease-in-out;
   }
 
+
+  & .logout {
+    justify-content: center;
+    & span {
+      margin-left: 1rem;
+    }
+  }
+
   @media only screen and (max-width: 768px) {
     align-items: center;
+
+    & .link{
+        padding:1.25rem;
+        margin: 0px;
+    }
   }
 
   @media only screen and (max-width: 600px) {
-    & .link {
-      width:100vw;
-
-    }
     display: ${(props) => (props.mobile !== true ? "none" : "flex")};
     background: lightgrey;
     padding: 0.5rem 0;
+
+    & .link {
+      width:100vw;
+    }
 
     & .disappear {
       display: none;
