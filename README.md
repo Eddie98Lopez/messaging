@@ -11,31 +11,22 @@ run "npm i" then "npm start". Below is the list of library dependencies I used f
 in source there is :
 
 ### 1. Components
-
 #### Route Components
-    - This folder houses all the main top level components that parallel their app functionality
+- This folder houses all the main top level components that parallel their app functionality
 #### Styled Components
-    - This folder houses styled components and styled wrappers for components and their child components
+- This folder houses styled components and styled wrappers for components and their child components
 #### {... All other components}
 
 ### 2. Design Assets
-    - The design assets folder houses all svg and png icons used in the UI.
+- The design assets folder houses all svg and png icons used in the UI.
 
 ### #3. Utils
-    a. Context
-    b. Schemas
-    c. {...all other helper functions}
+#### Context
+- Houses the store provider, reducer, and custom hook to use the store values
+#### Schemas
+- This folder houses the schemas used for form validation 
+#### {...all other helper functions}
 
-#### Components
-Route Components - 
-Styled Components 
-
-#### Design Assets
-
-
-#### Utils
-Context - Houses the store provider, reducer, and custom hook to use the store values
-Schemas - This folder houses the schemas used for form validation 
 
     
 
