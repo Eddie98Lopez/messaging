@@ -62,7 +62,7 @@ const Navigation = (props) => {
                     <NavLink activeClassName='active' className = 'link' to = {`${url}/folder/sent`}>
                         <Icon img={sent} alt='sent-icon'/>
                         <span className='navWords'>Sent</span>
-                        <span className='navWords'>{unRead('sent')}</span>
+                        <span className='navWords'></span>
                     </NavLink>
                 </div>
 

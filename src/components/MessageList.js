@@ -4,7 +4,7 @@ import EmptyFolder from './EmptyFolder';
 
 const MessageList = (props) => {
 const {folders,folder} = props
-const sorted=  folders[`${folder}`].sort((a, b) => Date.parse(a.sent) - Date.parse(b.sent))
+const sorted=  folders[`${folder}`].sort((a, b) => Date.parse(b.sent) - Date.parse(a.sent))
   
     return(
         <div className='folder'>

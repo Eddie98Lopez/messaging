@@ -5,11 +5,11 @@ const Thumb = styled.div`
   width: 100%;
   margin: 0 auto;
   border-bottom: .25px solid lightgrey;
-  border-left: ${props => props.read === 'false' ? '5px solid rgba(86,86,86,.5)': '5px solid rgba(86,86,86,0)'};
+  border-left: ${props => props.read === 'false' ? '6px solid rgba(86,86,86,.7)': '6px solid rgba(86,86,86,0)'};
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background:${props => props.read === 'false' ? '#f7f1da' : 'white'};
+  background:${props => props.read === 'false' ? 'white' : '#f7f1da'};
   padding: 0 2rem;
   transition: .4s ease-in-out;
  
