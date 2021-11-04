@@ -11,9 +11,9 @@ run "npm i" then "npm start". Below is the list of library dependencies I used f
 in source there is :
 
 1. Components
-    a. Route Components
-    b. Styled Components
-    c. {... All other components}
+    1a. Route Components
+    1b. Styled Components
+    1c. {... All other components}
 
 2. Design Assets
 
