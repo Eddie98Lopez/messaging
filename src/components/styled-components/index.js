@@ -6,7 +6,11 @@ import { DetailsWrapper, DetailButtons } from "./DetailsWrapper";
 import Thumb from "./Thumb";
 import { Form, Input, TextArea } from "./Forms";
 import { DashWrapper, MainWrapper } from "./DashWrapper";
-
+import { HomeWrapper } from "./HomeWrapper";
+import { AppContainer } from "./AppContainer";
+import {LoginWrapper} from './LoginWrapper'
+import { DetailRouteWrapper } from "./DetailRouteWrapper";
+ 
 
 export {
   Icon,
@@ -21,5 +25,9 @@ export {
   DetailsWrapper,
   DetailButtons,
   ErrorWrapper,
-  MainWrapper
+  MainWrapper,
+  HomeWrapper,
+  AppContainer,
+  LoginWrapper,
+  DetailRouteWrapper
 };

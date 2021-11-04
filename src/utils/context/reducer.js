@@ -1,12 +1,7 @@
 export const storeReducer = (state,action) => {
 
     switch (action.type){
-        case 'SET_CURRENT':
-            return {...state,
-            current: action.payload}
-        case 'RESET_CURRENT':
-            return {...state,
-            current:null}
+
         case 'READ_MESSAGE': 
             const {folder, message} = action.payload
             return {...state,

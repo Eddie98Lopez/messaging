@@ -1,30 +1,22 @@
-import './App.css';
-import styled from 'styled-components'
-import {Switch, Route} from 'react-router-dom'
-import { Dashboard,LoginRoute, PrivateRoute} from './components';
-import HomeRoute from './components/HomeRoute';
-
-const AppContainer = styled.div`
-width: 100%;
-height: 100vh;
-box-sizing: border-box;`
+import "./App.css";
+import { Switch, Route } from "react-router-dom";
+import { Dashboard, LoginRoute, PrivateRoute, HomeRoute } from "./components";
+import { AppContainer } from "./components/styled-components";
 
 function App() {
   return (
     <AppContainer>
-
       <Switch>
         <Route exact path="/">
-          <HomeRoute/>
+          <HomeRoute />
         </Route>
 
         <Route exact path="/login">
-          <LoginRoute/>
+          <LoginRoute />
         </Route>
-        
-        <PrivateRoute path="/dash" component={Dashboard}/>
-      </Switch>
 
+        <PrivateRoute path="/dash" component={Dashboard} />
+      </Switch>
     </AppContainer>
   );
 }

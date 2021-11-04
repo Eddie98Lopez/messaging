@@ -37,17 +37,16 @@ const LoginForm = (props) => {
 
   const submit = (e) => {
     e.preventDefault();
-    axios.post('https://messaging-test.bixly.com/api-token-auth/',form)
-            .then(res => {
-                console.log(res)
-                const token = res.data.token
-                localStorage.setItem('token',token)
-                push('/dash/folder/inbox')
-
-            })
-            .catch(err => {
-                setLoginErr('username or password is incorrect')
-            }) 
+    axios
+      .post('https://messaging-test.bixly.com/api-token-auth/',form)
+      .then(res => {
+          const token = res.data.token
+          localStorage.setItem('token',token)
+          push('/dash/folder/inbox')
+      })
+      .catch(err => {
+          setLoginErr('username or password is incorrect')
+      }) 
   };
 
   useEffect(() => {
