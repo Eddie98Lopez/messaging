@@ -7,6 +7,11 @@ align-items:center;
 padding:1rem;
 
 
+& div{
+  overflow:visible;
+}
+
+
 & button{
     display:inline-block;
     box-shadow:none;
