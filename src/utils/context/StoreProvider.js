@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import { storeReducer } from "./reducer";
-import { fetchMessages, getMsgsAction, getMsgsErr, newErrAction } from "..";
+import { fetchMessages, getMsgsAction, getMsgsErr, newErrAction, resetReply } from "..";
 import { useLocation } from "react-router";
 
 // MessageContext will act as a state store
@@ -39,7 +39,7 @@ export const StoreProvider = (props) => {
   }, []);
 
   useEffect(() => {
-    dispatch({ type: "RESET_REPLY" });
+    dispatch({ type: resetReply });
   }, [location]);
 
   return (
