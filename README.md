@@ -19,7 +19,7 @@ in source there is :
 
 ### 3. Utils
 1. Context
-2. Schemas
+2. Form Schemas
 3. {...all other helper functions}
 
 ## App State Management
@@ -28,6 +28,8 @@ I am using React's context api capabilities to manage app state. I created a con
 2. reply null or {message object}
 3. error (bool)
 4. error_message 'string'
+
+The "folders" slice of state holds 2 arrays of message objects for the inbox and sent messages. The "reply" slice of state is used when the user hits the reply button: it sets the given message to state, reroutes the user to the compose-new-message route, and auto-fills the title and recipient fields. The error slice of state is a boolean used to error handle server requests and render them to the UI. When there is a faulty request: the error value will be set to 'true' and an ERROR component will render an error message. 
 
 
 
