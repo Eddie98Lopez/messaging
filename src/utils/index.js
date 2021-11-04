@@ -18,7 +18,8 @@ import {
   readMsgAction,
   getMsgsAction,
   delMsgAction,
-  resetReply
+  resetReply,
+  replyMsgAction
 } from "../utils/context/actions";
 import { sendErrMsg, deleteErrMsg, getMsgsErr } from "../utils/error_messages";
 
@@ -41,6 +42,7 @@ export {
   getMsgsErr,
   replyMessage,
   readMessage,
-  resetReply
+  resetReply, 
+  replyMsgAction
 
 };
