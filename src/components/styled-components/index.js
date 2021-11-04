@@ -1,7 +1,8 @@
 import { Icon } from "./Icon";
 import { ErrorWrapper } from "./Wrappers/ErrorWrapper";
 import { Button } from "./Button";
-import { Nav, NavLinks } from "./Navigation";
+import ComposeButton from "./MobileCompose";
+import { Nav, NavLinks, LogoWrapper } from "./Navigation";
 import { DetailsWrapper, DetailButtons } from "./Wrappers/DetailsWrapper";
 import Thumb from "./Thumb";
 import { Form, Input, TextArea } from "./Forms";
@@ -29,5 +30,7 @@ export {
   HomeWrapper,
   AppContainer,
   LoginWrapper,
-  DetailRouteWrapper
+  DetailRouteWrapper,
+  ComposeButton,
+  LogoWrapper
 };
