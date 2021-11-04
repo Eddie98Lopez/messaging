@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const DetailRouteWrapper = styled.div`
+
 @media only screen and (max-width:600px){
   position:absolute;
   box-sizing:border-box;
@@ -8,6 +9,7 @@ export const DetailRouteWrapper = styled.div`
   height:100%;
   background:white;
   z-index:3;
+ 
  
   
 }

@@ -23,7 +23,7 @@ padding:1rem;
 const DetailsWrapper = styled.div`
   
   padding: 3rem;
-  overflow-y:scroll;
+  overflow-y:auto;
   max-height: 70vh;
 
   & h2 {
@@ -51,7 +51,7 @@ const DetailsWrapper = styled.div`
     font-size: 1rem;
     font-family: sans-serif;
     color: grey;
-    overflow-y: scroll;
+  
   }
 
   @media only screen and (max-width:600px){

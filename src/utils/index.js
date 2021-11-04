@@ -10,6 +10,7 @@ import { useStore } from "./context/useStore";
 import { fetchMessages } from "./fetchMessages";
 import { deleteMessage } from "./deleteMessage";
 import { replyMessage } from "./replyMessage";
+import { readMessage } from "./readMessage";
 
 import {
   newErrAction,
@@ -38,5 +39,6 @@ export {
   deleteErrMsg,
   getMsgsErr,
   replyMessage,
+  readMessage
 
 };

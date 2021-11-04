@@ -4,7 +4,7 @@ import { DetailNav } from ".";
 
 const Details = (props) => {
   const { title, body, sender, receiver,sent } = props.message;
-  const date = new Date(sent)
+  const date =  new Date(sent)
 
   return (
     <div>
