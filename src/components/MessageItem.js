@@ -1,18 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 import { useHistory, useParams } from "react-router";
 import { Icon, Thumb } from "./styled-components";
 import { deleteIcon, reply } from "../design-assets";
 import { deleteMessage, useStore, replyMessage} from "../utils";
 
 const MessageItem = (props) => {
-  const { title, sender, id, receiver, read} = props.message;
+  const { title, sender, id, receiver} = props.message;
+  let {read} = props.message
+  const [seen, setSeen] = useState(read)
 
   const { push } = useHistory();
   const { folder } = useParams();
   const {dispatch} = useStore()
 
-  const handleClick= (e) => {
+  const handleClick= (e, read) => {
     e.stopPropagation()
+    setSeen(true)
+    dispatch({type:'READ_MESSAGE', payload:{folder,message:props.message}})
+    /* axios.put(`url/${id}`,{...message, read:true}) */
     push(`/dash/folder/${folder}/${id}`)
   }
   
@@ -23,7 +28,7 @@ const MessageItem = (props) => {
   }
 
   return (
-    <Thumb read={read.toString()} onClick={handleClick}>
+    <Thumb read={seen.toString()} onClick={handleClick}>
       <div className="messInfo" >
         <p>{folder === "sent" ? receiver : sender}</p>
         <h3>{title}</h3>

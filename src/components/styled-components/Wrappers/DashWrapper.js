@@ -30,6 +30,7 @@ export const MainWrapper = styled.div`
 
   & .folder {
     background: rgba(255, 251, 194, 0.3);
+    border-right: solid .5px rgba(86,86,86,.2);
     overflow-y: auto;
   }
 
