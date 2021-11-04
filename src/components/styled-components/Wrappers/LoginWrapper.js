@@ -10,7 +10,7 @@ export const LoginWrapper = styled.div`
     grid-template-area: a;
     overflow: hidden;
 
-    & div {
+    & svg {
       position: relative;
       top: 80%;
       left: 5%;
@@ -23,18 +23,25 @@ export const LoginWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    & .logo {
+
+    & svg {
       align-self: center;
       display: none;
+      height:3rem;
+      width:auto;
     }
   }
 
   @media only screen and (max-width: 768px) {
     grid-template-columns: 30% 70%;
     & .left {
-      & div {
+      & svg {
         top: 90%;
+        left: 50%;
+
+        transform:translateX(-50%);
         height: 3rem;
+        width:auto;
       }
     }
   }
@@ -47,7 +54,7 @@ export const LoginWrapper = styled.div`
     }
 
     & .right {
-      & .logo {
+      & svg {
         display: block;
       }
     }
