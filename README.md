@@ -19,9 +19,9 @@ in source there is :
 2. Design Assets
 
 3. Utils
-    -Context
-    -Schemas
-    -{...all other helper functions}
+    - Context
+    - Schemas
+    - {...all other helper functions}
     
 
 
