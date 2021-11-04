@@ -11,12 +11,12 @@ run "npm i" then "npm start". Below is the list of library dependencies I used f
 in source there is :
 
 ### 1. Components
-- Route Components
+- #### Route Components
     - This folder houses all the main top level components that parallel their app functionality
 
-- Styled Components
+- ## Styled Components
     - This folder houses styled components and styled wrappers for components and their child components
-- All other smaller child components that are fed to larger components
+- ### All other smaller child components that are fed to larger components
 
 ### 2. Design Assets
 - The design assets folder houses all svg and png icons used in the UI.
