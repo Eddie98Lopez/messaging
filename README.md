@@ -14,19 +14,21 @@ in source there is :
 - #### Route Components
     - This folder houses all the main top level components that parallel their app functionality
 
-- ## Styled Components
+- #### Styled Components
     - This folder houses styled components and styled wrappers for components and their child components
-- ### All other smaller child components that are fed to larger components
+- #### All other smaller child components that are fed to larger components
+
 
 ### 2. Design Assets
 - The design assets folder houses all svg and png icons used in the UI.
 
+
 ### 3. Utils
-- Context
+- #### Context
     - Houses the store provider, reducer, and custom hook to use the store values
-- Schemas
+- #### Schemas
     - This folder houses the schemas used for form validation 
-- {...all other helper functions}
+- #### {...all other helper functions}
 
 
     
