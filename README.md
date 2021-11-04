@@ -28,6 +28,7 @@ I am using React's context api capabilities to manage app state. I created a con
 2. reply null or {message object}
 3. error (bool)
 4. error_message 'string'
+
 The Provider makes a 1 time GET request to the API server and sets the returned data to state in th "folders" slice of state which holds 2 arrays(inbox and sent) that hold message objects. The "reply" slice of state is initialized null and is used when the user hits the reply button: it sets the given message to state, reroutes the user to the compose-new-message route, and auto-fills the title and recipient fields. The error slice of state is a boolean used to error handle server requests and render them to the UI. When there is a faulty request: the error value will be set to 'true' and an ERROR component will render an error message. 
 
 As stated earlier the Provider makes a 1 time GET request to the API to collect all the messages. The app then uses conditional routing to render individual messages by cross checking the url :id params with the message id and filters the correct message out of the messages array.  This is all done in order to minimize server traffic and needless GET requests to the api.
