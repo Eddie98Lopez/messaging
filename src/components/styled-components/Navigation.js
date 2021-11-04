@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 /*Below is the parent nav element that will house navLinks. */
 
-const Nav = styled.nav`
+export const Nav = styled.nav`
 width: 100%;
 height: 100%;
 padding: 2rem 0;
@@ -23,44 +23,7 @@ z-index:3;
     }
 }
 
-& .logo{
-    display:flex;
-    justify-content: center;
-    width: 100%;
-    align-items:center;
-    margin-bottom: 2rem;
 
-    & .logoSvg{
-        display:flex;
-        width:70%;
-    }
-
-    @media only screen and (max-width:600px){
-        padding:1rem;
-        height:3.5rem;
-        margin-bottom: 0;
-        justify-content: space-between;
-        
-
-        & .logoSvg{
-            position:relative;
-            top:-4px;
-            left:-35%;
-        
-            width:100px;
-        }
-
-    }
-
-    & .hamburger{
-        display:none;
-        height:2rem;
-
-        @media only screen and (max-width:600px){
-            display:inline-block;
-        }
-    }
-}
 
 
 @media only screen and (max-width:600px){
@@ -81,7 +44,7 @@ z-index:3;
  Its seperated purposefully so when the screen is resized the mobile menu will toggle 
  on and off based on state */
 
-const NavLinks = styled.div`
+export const NavLinks = styled.div`
 
     box-sizing:border-box;
     width:100%;
@@ -166,6 +129,46 @@ const NavLinks = styled.div`
     
 `
 
+export const LogoWrapper = styled.div`
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom: 1rem;
+    
+    & .logoSvg{
+        width:75%;
+    }
+
+    & .hamburger{
+        display:none;
+        height:2rem;
+    }
+
+    @media only screen and (max-width:600px){
+        height:3.5rem;
+        margin-bottom: 0;
+        justify-content: space-between;
+        padding: 0 2rem;
+        
+
+        & .logoSvg{
+            height: 30px;
+            width:auto;
+
+        }
+
+        & .hamburger{
+            display:block;
+            height:30px;
+            width:auto;
+        }
+
+    }
 
 
-export {NavLinks,Nav}
+
+    
+`
+
+
+

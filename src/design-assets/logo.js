@@ -1,25 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const LogoWrapper = styled.div`
-
-user-select: none;
-height: auto;
-width: ${props=> props.width ? props.width: '50%'};
-margin:auto;
-
-& svg{
-  height: auto;
-  width: 100%;;
-  fill: black;
-
-}`
 
 const Logo = (props) =>{
 
   return( 
-    <LogoWrapper height={props.height} className={props.className} width={props.width}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="336.597" height="117.538" viewBox="0 0 336.597 117.538">
+    
+          <svg {...props} xmlns="http://www.w3.org/2000/svg" width="336.597" height="117.538" viewBox="0 0 336.597 117.538">
   <g id="Group_5" data-name="Group 5" transform="translate(-896.62 -490.25)">
     <g id="Group_3" data-name="Group 3" transform="translate(896.62 490.25)">
       <path id="Path_1" data-name="Path 1" d="M33.4,42.411l-9.368-9.3L16.962,47.585l1.894,3.282H47.939l1.894-3.282L42.765,33.112Z" transform="translate(16.191 31.606)" fill={`${props.fill}`}/>
@@ -30,7 +17,7 @@ const Logo = (props) =>{
     <text id="messaging" transform="translate(1012.625 602.788)" fill={`${props.fill}`} fontSize="19" fontFamily="LoosNormal-Medium, Loos Normal" fontWeight="500" letterSpacing="0.393em"><tspan x="0" y="0">MESSAGING</tspan></text>
   </g>
 </svg>
-    </LogoWrapper>
+    
 
 
   )

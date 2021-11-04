@@ -1,9 +1,10 @@
 import React from "react";
 import { DetailsRoute, MessageList } from "..";
-import { MainWrapper } from "../styled-components";
+import { MainWrapper,ComposeButton } from "../styled-components";
 import { useParams } from "react-router";
 import { useStore } from "../../utils";
 import { Switch, Route } from "react-router-dom";
+
 
 const FolderRoute = (props) => {
   const { folder } = useParams();
@@ -11,6 +12,7 @@ const FolderRoute = (props) => {
 
   return (
     <MainWrapper>
+      <ComposeButton/>
       <MessageList folder={folder} folders={folders} />
 
       <Switch>

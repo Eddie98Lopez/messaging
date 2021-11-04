@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import {NavLink, useHistory, useLocation } from 'react-router-dom'
-import { NavLinks, Nav, Icon, Button } from './styled-components'
+import { NavLinks, Nav, Icon, Button,LogoWrapper } from './styled-components'
 import {hamburger,inbox,logoutIcon,compose,sent, Logo} from '../design-assets'
 import { useStore } from '../utils'
 
@@ -26,21 +26,22 @@ const Navigation = (props) => {
 
     const logout = e => {
         localStorage.removeItem('token')
+        console.log(localStorage)
         push('/')   
     }
 
     return (
         <Nav>
 
-            <div className='logo'>
+            <LogoWrapper>
 
                 <Logo  fill='white' className='logoSvg'/>
 
-                <div className='hamburger svg' onClick={()=> setDisplay(!display)}>
+                <div className='hamburger' onClick={()=> setDisplay(!display)}>
                     <Icon img={hamburger} alt='hamburger' />
                 </div>
 
-            </div>
+            </LogoWrapper>
 
             <NavLinks mobile={display}>
                 <div className='top'>
