@@ -6,6 +6,7 @@ import { deleteMessage, useStore, replyMessage} from "../utils";
 
 const MessageItem = (props) => {
   const { title, sender, id, receiver} = props.message;
+  console.log(props.message)
   let {read} = props.message
   const [seen, setSeen] = useState(read)
 
