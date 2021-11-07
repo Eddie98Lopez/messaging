@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import { storeReducer } from "./reducer";
-import { fetchMessages, getMsgsAction, getMsgsErr, newErrAction, resetReply } from "..";
+import { fetchMessages, resetReply } from "..";
 import { useLocation } from "react-router";
 
 // MessageContext will act as a state store
@@ -26,16 +26,7 @@ export const StoreProvider = (props) => {
   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const folders = await fetchMessages();
-        dispatch({ type: getMsgsAction, payload: folders });
-      } catch {
-        dispatch({ type: newErrAction, payload: getMsgsErr });
-      }
-    };
-
-    fetchData();
+      fetchMessages(dispatch)
   }, []);
 
   useEffect(() => {
