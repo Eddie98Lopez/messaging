@@ -6,7 +6,6 @@ import {
   fetchMessages,
   useStore,
   sendErrMsg,
-  getMsgsAction,
   newErrAction
 } from "../utils";
 import{ Form, Input, Button, TextArea} from './styled-components'
@@ -57,9 +56,7 @@ const NewMessage = (props) => {
     const fetchData = async () => {
       try {
         const newMessage = await axiosWithAuth().post(`${baseUrl}messages/`,draft);
-        const newFolders = await fetchMessages()
-
-        newMessage.data.data = "success" && dispatch({type:getMsgsAction, payload:newFolders})
+        newMessage.data.data = "success" && fetchMessages(dispatch)
         push("/dash/folder/inbox");} 
 
       catch {
