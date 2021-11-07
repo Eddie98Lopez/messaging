@@ -33,7 +33,7 @@ export const Nav = styled.nav`
   }
 `;
 
-/*Below is "NavLinks" a seperzate div of just the links.
+/*Below is "NavLinks" a seperate div of just the links.
  Its seperated purposefully so when the screen is resized the mobile menu will toggle 
  on and off based on state */
 
@@ -74,7 +74,7 @@ export const NavLinks = styled.div`
     color: white;
     font-family: loos-normal, sans-serif;
     cursor: pointer;
-
+    text-transform: capitalize;
 
   }
   & .active {
@@ -116,36 +116,3 @@ export const NavLinks = styled.div`
   }
 `;
 
-export const LogoWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1rem;
-
-  & .logoSvg {
-    width: 75%;
-  }
-
-  & .hamburger {
-    display: none;
-    height: 2rem;
-  }
-
-  @media only screen and (max-width: 600px) {
-    height: 3.5rem;
-    margin-bottom: 0;
-    justify-content: space-between;
-    padding: 0 2rem;
-
-    & .logoSvg {
-      height: 30px;
-      width: auto;
-    }
-
-    & .hamburger {
-      display: block;
-      height: 30px;
-      width: auto;
-    }
-  }
-`;
