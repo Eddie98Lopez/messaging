@@ -10,8 +10,6 @@ export const StoreContext = createContext();
 //Below is a custom provider component
 export const StoreProvider = (props) => {
   const location = useLocation();
-
-
   const [store, setStore] = useState(initialState);
 
   const dispatch = (action) => {
