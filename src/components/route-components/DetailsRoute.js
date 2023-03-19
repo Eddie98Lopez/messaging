@@ -8,7 +8,7 @@ const DetailsRoute = (props) => {
   const { folder, id } = useParams();
   const { folders } = useStore().store;
 
-  const details = folders[`${folder}`].filter((item) => item.id == id)[0];
+  const details = folders[`${folder}`].filter((item) => item.id === id)[0];
 
   return (
     <DetailRouteWrapper>

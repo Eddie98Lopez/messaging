@@ -8,7 +8,7 @@ export const storeReducer = (state, action) => {
           ...state.folders,
           [folder]: [
             ...state.folders[`${folder}`].filter(
-              (item) => item.id != message.id
+              (item) => item.id !== message.id
             ),
             { ...message, read: true },
           ],
@@ -22,9 +22,9 @@ export const storeReducer = (state, action) => {
         folders: {
           ...state.folders,
           inbox: state.folders.inbox.filter(
-            (item) => item.id != action.payload
+            (item) => item.id !== action.payload
           ),
-          sent: state.folders.sent.filter((item) => item.id != action.payload),
+          sent: state.folders.sent.filter((item) => item.id !== action.payload),
         },
       };
     case "REPLY":
